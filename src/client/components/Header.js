@@ -12,6 +12,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div>
+                <img src="" />
                 <h1>{this.state.headerTitle}</h1>
             </div>
         );
