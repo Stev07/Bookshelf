@@ -9,6 +9,6 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import Home from "./components/Home";
+import Login from "./components/Login";
 
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(<Login />, document.querySelector("#app"));
