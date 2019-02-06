@@ -11,7 +11,8 @@
     "work:server": "npx babel src/server -s --watch --verbose --out-dir bin/server",
     "build:client": "npx webpack --progress --profile --colors",
     "work:client": "npx webpack-dev-server --env=dev --hot --progress",
-    "build": "npm run build:server && npm run build:client"
+    "build": "npm run build:server && npm run build:client",
+    "build:svg": "svgr -d svg/ components/"
   },
   "lint-staged": {
     "*.js": [
@@ -31,6 +32,7 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.0",
     "babel-loader": "^8.0.2",
+    "css-loader": "^2.1.0",
     "eslint": "^5.6.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
@@ -38,13 +40,17 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.0.1",
     "lint-staged": "^8.1.0",
+    "node-sass": "^4.11.0",
     "prettier": "^1.14.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.20.2",
+    "webpack": "^4.29.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "@svgr/cli": "^4.1.0",
     "express": "^4.16.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
