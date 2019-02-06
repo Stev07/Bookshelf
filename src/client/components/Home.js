@@ -7,12 +7,13 @@
  */
 
 import * as React from "react";
+import Header from "./Header";
 
-export default class HelloWorld extends React.Component {
+export default class Home extends React.Component {
     render() {
         return (
             <div>
-                
+                <Header />
             </div>
         );
     }
