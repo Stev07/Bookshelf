@@ -1,13 +1,11 @@
-import * as React from "react";
+import React from "react";
 
-class Error extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>{"Are u lost, bro?"}</p>
-            </div>
-        );
-    }
-}
+const Error = () => {
+    return (
+        <div>
+            <p>{"Are you lost?"}</p>
+        </div>
+    );
+};
 
 export default Error;

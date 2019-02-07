@@ -5,10 +5,48 @@
  * coded by leny@BeCode
  * started at 18/01/2019
  */
-
 import * as React from "react";
 import ReactDOM from "react-dom";
 
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Author from "./components/Author";
+import Books from "./components/Books";
 import Login from "./components/Login";
+import CoachInterface from "./components/CoachInterface";
+import UserInterface from "./components/UserInterface";
+import Error from "./components/Error";
 
-ReactDOM.render(<Login />, document.querySelector("#app"));
+class App extends React.Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Header />
+                    <NavBar />
+                    <Switch>
+                        <Route path="/Login" component={Login} exact />
+                        <Route path="/Home" component={Home} />
+                        <Route path="/Books" component={Books} />
+                        <Route path="/Author" component={Author} />
+                        <Route
+                            path="/UserInterface"
+                            component={UserInterface}
+                        />
+                        <Route
+                            path="/CoachInterface"
+                            component={CoachInterface}
+                        />
+                        <Route component={Error} />
+                    </Switch>
+                    <Footer />
+                </div>
+            </BrowserRouter>
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.querySelector("#app"));
