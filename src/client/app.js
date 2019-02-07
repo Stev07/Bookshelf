@@ -8,43 +8,36 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
+// import Header from "./components/Header";
+// import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Author from "./components/Author";
 import Books from "./components/Books";
-import Login from "./components/Login";
-import CoachInterface from "./components/CoachInterface";
-import UserInterface from "./components/UserInterface";
+// import Login from "./components/Login";
+// import CoachInterface from "./components/CoachInterface";
+// import UserInterface from "./components/UserInterface";
 import Error from "./components/Error";
 
 export default class App extends React.Component {
     render() {
         return (
-            <div>
-                <Router>
-                    <Header />
-                    <NavBar />
+            <Router>
+                <div>
+                    <Link to="/">{"Home"}</Link>
+
+                    <Link to="/books">{"Books"}</Link>
+
+                    <Link to="/author">{"Author"}</Link>
+
                     <Switch>
-                        <Route path="/Login" component={Login} exact />
-                        <Route path="/Home" component={Home} />
-                        <Route path="/Books" component={Books} />
-                        <Route path="/Author" component={Author} />
-                        <Route
-                            path="/UserInterface"
-                            component={UserInterface}
-                        />
-                        <Route
-                            path="/CoachInterface"
-                            component={CoachInterface}
-                        />
+                        <Route exact path="/" component={Home} />
+                        <Route path="/books" component={Books} />
+                        <Route path="/author" component={Author} />
                         <Route component={Error} />
                     </Switch>
-                    <Footer />
-                </Router>
-            </div>
+                </div>
+            </Router>
         );
     }
 }
