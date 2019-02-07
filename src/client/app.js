@@ -8,7 +8,7 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -25,24 +25,24 @@ export default class App extends React.Component {
         return (
             <div>
                 <Router>
-                        <Header />
-                        <NavBar />
-                            <Switch>
-                                <Route path="/Login" component={Login} exact />
-                                <Route path="/Home" component={Home} />
-                                <Route path="/Books" component={Books} />
-                                <Route path="/Author" component={Author} />
-                                <Route
-                                    path="/UserInterface"
-                                    component={UserInterface}
-                                />
-                                <Route
-                                    path="/CoachInterface"
-                                    component={CoachInterface}
-                                />
-                                <Route component={Error} />
-                            </Switch>
-                        <Footer />
+                    <Header />
+                    <NavBar />
+                    <Switch>
+                        <Route path="/Login" component={Login} exact />
+                        <Route path="/Home" component={Home} />
+                        <Route path="/Books" component={Books} />
+                        <Route path="/Author" component={Author} />
+                        <Route
+                            path="/UserInterface"
+                            component={UserInterface}
+                        />
+                        <Route
+                            path="/CoachInterface"
+                            component={CoachInterface}
+                        />
+                        <Route component={Error} />
+                    </Switch>
+                    <Footer />
                 </Router>
             </div>
         );

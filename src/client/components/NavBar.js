@@ -1,6 +1,5 @@
 import * as React from "react";
 import NavLink from "react";
-import App from '../app';
 
 export default class NavBar extends React.Component {
     render() {
