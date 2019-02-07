@@ -8,9 +8,9 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
-// import Header from "./components/Header";
-// import NavBar from "./components/NavBar";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Author from "./components/Author";
 import Books from "./components/Books";
@@ -24,16 +24,13 @@ export default class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Link to="/">{"Home"}</Link>
-
-                    <Link to="/books">{"Books"}</Link>
-
-                    <Link to="/author">{"Author"}</Link>
+                    <Header />
+                    <NavBar />
 
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/books" component={Books} />
-                        <Route path="/author" component={Author} />
+                        <Route path="/Books" component={Books} />
+                        <Route path="/Author" component={Author} />
                         <Route component={Error} />
                     </Switch>
                 </div>
