@@ -19,7 +19,7 @@ import Books from "./components/Books";
 // import UserInterface from "./components/UserInterface";
 import Error from "./components/Error";
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <Router>
