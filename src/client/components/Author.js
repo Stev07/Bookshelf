@@ -4,7 +4,7 @@ class Author extends React.Component {
     render() {
         return (
             <div>
-                <p>{"Welcome bitch"}</p>
+                <p>{"Welcome bro"}</p>
             </div>
         );
     }

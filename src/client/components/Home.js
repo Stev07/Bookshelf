@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <p>{"Home"}</p>
+                <p>{"Home page"}</p>
             </div>
         );
     }
