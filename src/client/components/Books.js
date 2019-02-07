@@ -4,7 +4,7 @@ class Books extends React.Component {
     render() {
         return (
             <div>
-                <p>{"BOOKS LIST"}</p>
+                <p>{"Books list"}</p>
             </div>
         );
     }
