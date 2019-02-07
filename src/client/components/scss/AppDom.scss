@@ -1,19 +1,19 @@
 // CSS du HEADER
 body {
-    margin: 0 auto;
-    align-content: center;
+    margin: auto;
 }
 .header {
+    width: 80%;
     display: flex;
     border: 1px solid black;
     text-align: center;
 }
 
 .logo {
-    size: 1em;
+    width: 10em;
+    height: 10em;
 }
 
 .title {
- 
-    font-size: 100px
+    font-size: 50px;
 }
