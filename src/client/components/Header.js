@@ -1,6 +1,8 @@
 import * as React from "react";
 import logoBecode from "../images/logo_Becode.png";
 import "./scss/AppDom.scss";
+import UserSettings from './UserSettings';
+
 
 export default class Header extends React.Component {
     constructor() {
@@ -24,6 +26,7 @@ export default class Header extends React.Component {
                 </div>
                 <div className="inputBox">
                     <input
+                        className="searchBar"
                         type="search"
                         placeholder="Looking for a book or an author ?"
                     />
@@ -31,7 +34,16 @@ export default class Header extends React.Component {
                 <div className="titleBox">
                     <h1 className="title">{this.state.headerTitle}</h1>
                 </div>
+                <div className="userBox">
+                    <div className="helloUserBox">
+                        <p>Hello, User</p>
+                    </div>
+                    <div className="iconBox">
+                        <UserSettings />
+                    </div>
+                </div>
             </div>
         );
     }
 }
+
