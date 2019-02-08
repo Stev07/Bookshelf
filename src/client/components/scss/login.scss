@@ -1,4 +1,228 @@
 .container {
+    background: rgb(80,245,203);
+    background: linear-gradient(0deg, rgba(80,245,203,1) 8%, rgba(80,168,162,1) 70%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.content{
+    z-index: 2;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 35% 1fr 1fr 1fr 1fr ;
+    position: relative;
     height: 100vh;
     width: 100vw;
 }
+.squaresBox{
+    z-index: 1;
+}
+.logo{
+    grid-column: 2;
+    grid-row:1;
+    padding-top:20px;
+}
+
+.logoBecode{
+    width:250px;
+}
+
+.welcome{
+    grid-column: 2;
+    grid-row:2;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+    font-size: 40px;
+    
+}
+
+.user{
+    grid-column: 2;
+    grid-row:3;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+
+    input{
+        width: 370px;
+        height: 60px;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        background: #75D0B6;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        border-style: none;
+        font-size: 25px;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+    }
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.7);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    rgba(255, 255, 255, 0.7);;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    rgba(255, 255, 255, 0.7);;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    rgba(255, 255, 255, 0.7);;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:    rgba(255, 255, 255, 0.7);;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+    color:    rgba(255, 255, 255, 0.7);;
+}
+
+.login{
+    grid-column: 2;
+    grid-row:4;
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btnLogin{
+        background: white;
+        color: #75D0B6;
+        border-style: none;
+        width: 330px;
+        height: 50px;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size:35px;
+    
+        &:active{
+            border-style:solid;
+            border-width:2px;
+            border-color:#50a8a2;
+        }
+    }
+}
+
+.copyright{
+    grid-column: 2;
+    grid-row:5;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+#block1{
+    width: 150px;
+    height: 150px;
+    background: rgba(117,208,192,0.7);
+    position: absolute;
+    top:850px;
+    right:900px;
+    animation: bottomToTop 8s infinite,
+                rotate 8s infinite alternate;
+    }
+
+#block2{
+    width: 150px;
+    height: 150px;
+    background:rgba(117,208,192,0.7);
+    position: absolute;
+    top:850px;
+    right:800px;
+    animation: bottomToTop 4s infinite, rotate 4s infinite;
+}
+
+#block3{
+    width: 100px;
+    height: 100px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:1100px;
+    animation: bottomToTop 6s infinite, rotate 6s infinite alternate;
+}
+
+#block4{
+    width: 150px;
+    height: 150px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:200px;
+    animation: bottomToTop 10s infinite, rotate 10s infinite;
+}
+
+
+#block5{
+    width: 100px;
+    height: 100px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:100px;
+    animation: bottomToTop 12s infinite, rotate 12s infinite;
+}
+
+#block6{
+    width: 150px;
+    height: 150px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:1250px;
+    animation: bottomToTop 7s infinite, rotate 7s infinite alternate;
+}
+
+#block7{
+    width: 100px;
+    height: 100px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:700px;
+    animation: bottomToTop 14s infinite, rotate 14s infinite;
+}
+
+#block9{
+    width: 150px;
+    height: 150px;
+    background: rgba(117,208,192,0.7);;
+    position: absolute;
+    top:850px;
+    right:400px;
+    animation: bottomToTop 15s infinite, rotate 15s infinite alternate;
+}
+
+@keyframes bottomToTop
+{
+    0% {
+        top: 850px;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        top: 0px;
+    }
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
