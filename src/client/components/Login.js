@@ -5,19 +5,18 @@ import logoBecode from "../images/logo_Becode.png";
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {emailValue: "", passwordValue: ""};
+        this.state = {emailValue: "", passValue: ""};
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangePass = this.handleChangePass.bind(this);
     }
 
-    handleChange(event) {
+    handleChangeEmail(event) {
         this.setState({emailValue: event.target.value});
     }
 
-    handleSubmit(event) {
-        alert(`A name was submitted ${this.state.value}`);
-        event.preventDefault();
+    handleChangePass(event) {
+        this.setState({passValue: event.target.value});
     }
 
     render() {
@@ -42,13 +41,15 @@ class Login extends React.Component {
                             className="inputUser"
                             placeholder="Email"
                             value={this.state.emailValue}
-                            onChange={this.handleChange}
+                            onChange={this.handleChangeEmail}
                         />
 
                         <input
-                            type="text"
+                            type="password"
                             className="inputPassword"
                             placeholder="Password"
+                            value={this.state.passValue}
+                            onChange={this.handleChangePass}
                         />
                     </form>
 
