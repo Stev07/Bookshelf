@@ -14,6 +14,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Author from "./components/Author";
 import Books from "./components/Books";
+import Login from "./components/Login";
 // import Login from "./components/Login";
 // import CoachInterface from "./components/CoachInterface";
 // import UserInterface from "./components/UserInterface";
@@ -28,9 +29,10 @@ export default class App extends React.Component {
                     <NavBar />
 
                     <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/Books" component={Books} />
-                        <Route path="/Author" component={Author} />
+                        <Route exact path="/" component={Login} />
+                        <Route exact path="/home" component={Home} />
+                        <Route path="/books" component={Books} />
+                        <Route path="/author" component={Author} />
                         <Route component={Error} />
                     </Switch>
                 </div>
