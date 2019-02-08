@@ -18,7 +18,7 @@ export default class Header extends React.Component {
             <div className="header">
                 <div className="logoBox">
                     <img
-                        className="logo"
+                        className="logoHeader"
                         src={this.state.logo}
                         alt="BeCode.org"
                     />
@@ -28,7 +28,7 @@ export default class Header extends React.Component {
                 </div>
                 <div className="userBox">
                     <div className="helloUserBox">
-                        <p>{"Hello, User"}</p>
+                        <p className="helloUser">{"Hello, User"}</p>
                     </div>
                     <div className="iconBox">
                         <UserSettings />

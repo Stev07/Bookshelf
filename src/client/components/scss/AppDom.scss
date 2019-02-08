@@ -1,71 +1,69 @@
 // CSS du HEADER
 
 body {
-
     margin: auto;
-
 }
 
 .header {
     grid-template-columns: 1fr, 1fr, 1fr, 1fr;
     grid-template-rows: 1;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    width: 100%;
+    display: grid;
+    flex-direction: row;
+    width: 100vw;
     height: 30vh;
     background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
 }
 
 .logoBox {
-    border: 1px solid black;
-    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
     
-    .logo {
+    .logoHeader {
         width: 10em;
-        height: 10em;
     }
 }
 
 .inputBox {
 
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    grid-column: 2;
 
     .searchBar {
-        width: 60%;
-    }
-}
-
-
-
-
-.titleBox {
-    border: 1px solid black;
-    width: 35%;
-
-    .title {
-        text-align: center;
-        vertical-align: middle;
-        color: white;
-        font-size: 30px;
+        width: 80%;
     }
 }
 
 .userBox {
 
-    width: 20%;
-    align-items: center;
-    border: 1px solid black;
     display: flex;
-    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    float: right;
+    grid-column: 4;
+    justify-content: right;
+
+
+    .helloUser {
+        font-size: 2em;
+        vertical-align: middle;
+        text-align: right; 
+    }
 
     .iconBox {
 
-        border: 1px solid black;
-    
-        .icon {
+        font-size: 3em;
 
+        .icon {
+            vertical-align: middle;
             text-decoration: none;
+            text-align: right;
+            margin-left: 1em;
+            margin-right: 2em;
+            margin-bottom: 0.6em;
 
         }  
     }
