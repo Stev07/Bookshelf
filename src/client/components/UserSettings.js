@@ -1,29 +1,38 @@
-import React from 'react';
-import { Menu, Dropdown, Icon } from 'antd';
-import './scss/antd.scss';
+import React from "react";
+import {Menu, Dropdown, Icon} from "antd";
+import "./scss/antd.scss";
 
-const menu =
+const menu = (
     <Menu>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">Settings</a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://www.alipay.com/">
+                {"Settings"}
+            </a>
         </Menu.Item>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">Log out</a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://www.taobao.com/">
+                {"Log out"}
+            </a>
         </Menu.Item>
-    </Menu>;
-           
+    </Menu>
+);
 
-export default class UserSettings extends React.Component{
-
-    render(){
-        return(
+export default class UserSettings extends React.Component {
+    render() {
+        return (
             <div>
                 <Dropdown overlay={menu}>
                     <a className="ant-dropdown-link" href="#">
-                        <Icon type="user" />
+                        <Icon className="icon" type="user" />
                     </a>
-                </Dropdown>,
+                </Dropdown>
             </div>
-        )
+        );
     }
 }

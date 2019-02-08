@@ -1,56 +1,63 @@
 // CSS du HEADER
+
 body {
+
     margin: auto;
-}
-.header {
-    grid-template-columns: 4;
-    grid-template-rows: 1;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 35vh;
-    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
+
 }
 
-.inputBox {
-    border: 1px solid black;
-    .searchBar {
-        margin-top: 35%;
-        border: 1px solid black;
-    }
+.header {
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
 }
 
 .logoBox {
     border: 1px solid black;
-    margin-right: 2%;
-    margin-left: 2%;
+    width: 20%;
     
     .logo {
-        padding: auto;
-        width: 9em;
-        height: 9em;
+        width: 10em;
+        height: 10em;
+    }
+}
+
+.inputBox {
+
+    border: 1px solid black;
+
+    .searchBar {
+        width: 60%;
     }
 }
 
 
+
+
 .titleBox {
     border: 1px solid black;
+    width: 35%;
 
     .title {
+        text-align: center;
+        vertical-align: middle;
         color: white;
-        font-size: 50px;
+        font-size: 30px;
     }
 }
 
 .userBox {
 
-    grid-column-start: 4;
-    grid-column-end: 5;
     width: 20%;
-    margin-left: 30%;
     align-items: center;
     border: 1px solid black;
     display: flex;
+    flex-direction: row;
 
     .iconBox {
 
@@ -58,7 +65,7 @@ body {
     
         .icon {
 
-            border: 1px solid black;
+            text-decoration: none;
 
         }  
     }
