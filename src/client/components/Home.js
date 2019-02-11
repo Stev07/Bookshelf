@@ -10,15 +10,14 @@ import * as React from "react";
 import Header from "./Header";
 import NavBar from "./NavBar";
 import "./scss/AppDom.scss";
-import Cover from "../images/ReactJSEssentials.png"
+import Cover from "../images/ReactJSEssentials.png";
 
 export default class Home extends React.Component {
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             cover: Cover,
-        }
+        };
     }
 
     render() {
@@ -42,15 +41,11 @@ export default class Home extends React.Component {
                 <div className="section">
                     <p className="sectionName">{"Most rated"}</p>
                 </div>
-                <div className="showSection">
-
-                </div>
+                <div className="showSection" />
                 <div className="section">
                     <p className="sectionName">{"Latest Review"}</p>
                 </div>
-                <div className="showSection">
-
-                </div>
+                <div className="showSection" />
             </div>
         );
     }

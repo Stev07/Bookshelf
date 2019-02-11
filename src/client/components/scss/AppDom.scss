@@ -50,11 +50,14 @@ body {
 
     .helloUser {
         font-size: 2em;
+        color: white;
+        font-family: 'Open Sans Condensed', sans-serif;
+
         vertical-align: middle;
         text-align: right; 
         margin: auto;
         margin-right: 10px;
-        color: white;
+        
     }
 
     .iconBox {
@@ -86,12 +89,17 @@ body {
     width: 100%;
     height: 10vh;
 
+    display: flex;
     text-align: center;
+    justify-content: center;
 
     background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
 
     .sectionName {
         vertical-align: middle;
+
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 3em;
         color: white;
     }
 }
