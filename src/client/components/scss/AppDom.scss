@@ -54,6 +54,7 @@ body {
         text-align: right; 
         margin: auto;
         margin-right: 10px;
+        color: white;
     }
 
     .iconBox {
@@ -78,3 +79,43 @@ body {
 }
 
 // Fin du CSS Header
+
+// CSS de la page HOME
+
+.section {
+    width: 100%;
+    height: 10vh;
+
+    text-align: center;
+
+    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
+
+    .sectionName {
+        vertical-align: middle;
+        color: white;
+    }
+}
+
+.showSection {
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(to bottom, #a5c5cd, #aac8d0, #b0cbd3, #b5ced5, #bad1d8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .bookCover {
+        border: 1px solid black;
+        width: 16vw;
+        padding: 0.5%;
+        margin: auto;
+
+        justify-content: center;
+        
+        .book {
+            width: 15vw;
+            height: 40vh;
+        }
+    }
+}
