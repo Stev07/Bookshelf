@@ -3,6 +3,22 @@ import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
 
 class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {emailValue: "", passValue: ""};
+
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangePass = this.handleChangePass.bind(this);
+    }
+
+    handleChangeEmail(event) {
+        this.setState({emailValue: event.target.value});
+    }
+
+    handleChangePass(event) {
+        this.setState({passValue: event.target.value});
+    }
+
     render() {
         return (
             <div className="container">
@@ -19,13 +35,23 @@ class Login extends React.Component {
                         <p>{"BookShelf"}</p>
                     </div>
 
-                    <div className="user">
-                        <input className="inputUser" placeholder="User" />
+                    <form className="user" onSubmit={this.handleSubmit}>
                         <input
+                            type="text"
+                            className="inputUser"
+                            placeholder="Email"
+                            value={this.state.emailValue}
+                            onChange={this.handleChangeEmail}
+                        />
+
+                        <input
+                            type="password"
                             className="inputPassword"
                             placeholder="Password"
+                            value={this.state.passValue}
+                            onChange={this.handleChangePass}
                         />
-                    </div>
+                    </form>
 
                     <div className="login">
                         <button className="btnLogin">{"Login"}</button>
@@ -34,17 +60,17 @@ class Login extends React.Component {
                     <div className="copyright">
                         <p>{"© 2016-2019, BeCode.org"}</p>
                     </div>
-                </div>
 
-                <div className="squaresBox">
-                    <div id="block1" />
-                    <div id="block2" />
-                    <div id="block3" />
-                    <div id="block4" />
-                    <div id="block5" />
-                    <div id="block6" />
-                    <div id="block7" />
-                    <div id="block8" />
+                    <div className="squaresBox">
+                        <div id="block1" />
+                        <div id="block2" />
+                        <div id="block3" />
+                        <div id="block4" />
+                        <div id="block5" />
+                        <div id="block6" />
+                        <div id="block7" />
+                        <div id="block8" />
+                    </div>
                 </div>
             </div>
         );

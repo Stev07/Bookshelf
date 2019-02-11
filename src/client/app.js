@@ -9,8 +9,6 @@ import * as React from "react";
 import ReactDOM from "react-dom";
 
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Author from "./components/Author";
 import Books from "./components/Books";
@@ -25,12 +23,9 @@ export default class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Header />
-                    <NavBar />
-
                     <Switch>
                         <Route exact path="/" component={Login} />
-                        <Route exact path="/home" component={Home} />
+                        <Route path="/home" component={Home} />
                         <Route path="/books" component={Books} />
                         <Route path="/author" component={Author} />
                         <Route component={Error} />
