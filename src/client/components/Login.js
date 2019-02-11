@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
-import NavBar from "./NavBar";
 
 class Login extends React.Component {
     constructor(props) {
@@ -26,7 +25,6 @@ class Login extends React.Component {
     render() {
         return (
             <div className="container">
-                <NavBar />
                 <div className="content">
                     <div className="logo">
                         <img
