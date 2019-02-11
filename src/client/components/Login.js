@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
+import {Link} from "react-router-dom";
 
 class Login extends React.Component {
     constructor(props) {
@@ -57,9 +58,9 @@ class Login extends React.Component {
                     </form>
 
                     <div className="login">
-                        <button type="submit" className="btnLogin">
-                            {"Login"}
-                        </button>
+                        <Link to="/home">
+                            <button className="btnLogin">{"Home"}</button>
+                        </Link>
                     </div>
 
                     <div className="copyright">
