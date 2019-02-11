@@ -1,19 +1,80 @@
 // CSS du HEADER
+
 body {
-    margin: 0 auto;
-    align-content: center;
+    margin: auto;
 }
+
 .header {
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: 1;
+    overflow: hidden;
+    display: grid;
+    flex-direction: row;
+    width: 100vw;
+    height: 30vh;
+    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
+}
+
+.logoBox {
     display: flex;
-    border: 1px solid black;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
+    
+    .logoHeader {
+        width: 10em;
+    }
 }
 
-.logo {
-    size: 1em;
+.inputBox {
+
+    display: flex;
+    align-items: center;
+    grid-column: 2;
+
+    .searchBar {
+        width: 80%;
+    }
 }
 
-.title {
- 
-    font-size: 100px
+.userBox {
+
+    display: flex;
+    align-self: center;
+    align-items: center;
+    float: right;
+    grid-column: 4;
+    justify-content: right;
+    padding: 0 auto;
+
+
+    .helloUser {
+        font-size: 2em;
+        vertical-align: middle;
+        text-align: right; 
+        margin: auto;
+        margin-right: 10px;
+    }
+
+    .iconBox {
+        border: 1px solid transparent;
+        border-radius: 100px;
+        background-color: white;
+
+        font-size: x-large;
+        margin-right: 4rem;
+        margin-left: 1rem;
+
+        .icon {
+
+            font-size: 2rem;
+            vertical-align: middle;
+            text-decoration: none;
+            text-align: right;
+            margin: 1rem;
+
+        }  
+    }
 }
+
+// Fin du CSS Header
