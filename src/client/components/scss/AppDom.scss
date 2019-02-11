@@ -45,25 +45,33 @@ body {
     float: right;
     grid-column: 4;
     justify-content: right;
+    padding: 0 auto;
 
 
     .helloUser {
         font-size: 2em;
         vertical-align: middle;
         text-align: right; 
+        margin: auto;
+        margin-right: 10px;
     }
 
     .iconBox {
+        border: 1px solid transparent;
+        border-radius: 100px;
+        background-color: white;
 
-        font-size: 3em;
+        font-size: x-large;
+        margin-right: 4rem;
+        margin-left: 1rem;
 
         .icon {
+
+            font-size: 2rem;
             vertical-align: middle;
             text-decoration: none;
             text-align: right;
-            margin-left: 1em;
-            margin-right: 2em;
-            margin-bottom: 0.6em;
+            margin: 1rem;
 
         }  
     }
