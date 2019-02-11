@@ -7,11 +7,15 @@
  */
 
 import * as React from "react";
+import Header from "./Header";
+import NavBar from "./NavBar";
 
 export default class Home extends React.Component {
     render() {
         return (
             <div>
+                <Header />
+                <NavBar />
                 <p>{"Home page"}</p>
             </div>
         );
