@@ -5,7 +5,10 @@ import logoBecode from "../images/logo_Becode.png";
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {emailValue: "", passValue: ""};
+        this.state = {
+            emailValue: "",
+            passValue: "",
+        };
 
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePass = this.handleChangePass.bind(this);
@@ -37,7 +40,7 @@ class Login extends React.Component {
 
                     <form className="user" onSubmit={this.handleSubmit}>
                         <input
-                            type="text"
+                            type="email"
                             className="inputUser"
                             placeholder="Email"
                             value={this.state.emailValue}
@@ -54,7 +57,9 @@ class Login extends React.Component {
                     </form>
 
                     <div className="login">
-                        <button className="btnLogin">{"Login"}</button>
+                        <button type="submit" className="btnLogin">
+                            {"Login"}
+                        </button>
                     </div>
 
                     <div className="copyright">
