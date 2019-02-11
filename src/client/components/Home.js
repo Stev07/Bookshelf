@@ -16,7 +16,19 @@ export default class Home extends React.Component {
             <div>
                 <Header />
                 <NavBar />
-                <h1>{"<Bookshelf />"}</h1>
+
+                <div>
+                    <h1>{"<Bookshelf />"}</h1>
+                </div>
+                <div className="section">
+                    <p className="sectionName">{"Latest entries"}</p>
+                </div>
+                <div className="section">
+                    <p className="sectionName">{"Most rated"}</p>
+                </div>
+                <div className="section">
+                    <p className="sectionName">{"Latest Review"}</p>
+                </div>
             </div>
         );
     }
