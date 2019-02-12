@@ -5,12 +5,12 @@ import "./scss/navbar.scss";
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.handleScroll = this.handleScroll.bind(this);
+        this.state = {top: "", height: ""};
     }
 
-    handleScroll() {
+    handleScroll = () => {
         this.setState({scroll: window.scrollY});
-    }
+    };
 
     componentDidMount() {
         const el = document.querySelector("nav");
