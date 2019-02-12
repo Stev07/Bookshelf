@@ -5,9 +5,6 @@ import "./scss/navbar.scss";
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {};
-
         this.handleScroll = this.handleScroll.bind(this);
     }
 
