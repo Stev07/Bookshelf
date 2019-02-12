@@ -11,6 +11,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import "./scss/AppDom.scss";
 import Cover from "../images/ReactJSEssentials.png";
+import ShowBooks from "./ShowBooks";
 
 export default class Home extends React.Component {
     constructor(props) {
