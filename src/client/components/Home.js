@@ -27,7 +27,7 @@ export default class Home extends React.Component {
                 <NavBar />
 
                 <div className="section">
-                    <p className="sectionName">{"Latest entries"}</p>
+                    <p className="sectionName">{"LATEST ENTRIES"}</p>
                 </div>
                 <div className="showSection">
                     <div className="bookCover">
@@ -39,11 +39,11 @@ export default class Home extends React.Component {
                     </div>
                 </div>
                 <div className="section">
-                    <p className="sectionName">{"Most rated"}</p>
+                    <p className="sectionName">{"MOST RATED"}</p>
                 </div>
                 <div className="showSection" />
                 <div className="section">
-                    <p className="sectionName">{"Latest Review"}</p>
+                    <p className="sectionName">{"LATEST REVIEWS"}</p>
                 </div>
                 <div className="showSection" />
             </div>

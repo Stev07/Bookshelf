@@ -12,7 +12,7 @@ body {
     flex-direction: row;
     width: 100vw;
     height: 30vh;
-    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
+    background: linear-gradient(0deg, rgba(80,245,203,1) 8%, rgba(80,168,162,1) 70%);
 }
 
 .logoBox {
@@ -93,13 +93,13 @@ body {
     text-align: center;
     justify-content: center;
 
-    background-image: linear-gradient(to bottom, #4f8c95, #5497a0, #59a1ac, #5facb7, #64b7c3);
+    background: linear-gradient(0deg, rgba(80,245,203,1) 8%, rgba(80,168,162,1) 70%);
 
     .sectionName {
         vertical-align: middle;
 
         font-family: 'Open Sans Condensed', sans-serif;
-        font-size: 3em;
+        font-size: 2.5rem;
         color: white;
     }
 }
