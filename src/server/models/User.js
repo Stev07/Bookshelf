@@ -1,23 +1,28 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
     name: {
         firstName: {
-            type: String
+            type: String,
         },
         lastName: {
-            type: String
+            type: String,
         },
-        required: true
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        index: { unique: true }
+        index: {unique: true},
     },
     password: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
+    coach: {
+        type: Boolean,
+        default: false,
+    },
 });
+
+module.exports = mongoose.model("User", UserSchema);

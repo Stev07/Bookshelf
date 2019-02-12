@@ -13,6 +13,20 @@ const {APP_PORT} = process.env;
 
 const app = express();
 
+const mongoose = require("mongoose");
+const uri = "mongodb://mongo/bookshelf";
+const connOptions = {
+    useNewUrlParser: true,
+    authSource: "admin",
+    user: "dev",
+    pass: "dev",
+};
+
+mongoose
+    .connect(uri, connOptions)
+    .then(() => console.log("connected"))
+    .catch(err => console.log(err));
+
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 
 app.get("/hello", (req, res) => {
