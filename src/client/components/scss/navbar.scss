@@ -1,0 +1,31 @@
+$nav-height: 40px;
+
+nav{
+    height: $nav-height;
+    font-size: 20px;
+    background-color: #50f5cb;
+    border-bottom: 1px solid white;
+
+    .navLinks{
+        display:flex;
+        align-items: center;
+        justify-content:space-around;
+        padding-left:20%;
+        padding-right:20%;
+    }
+
+    .navItem{
+        list-style: none;
+
+        &:hover{
+            font-weight: bold;
+        }
+    }
+}
+
+
+.fixed-nav {
+    position: fixed;
+    top:0px;
+    width: 100%;
+}

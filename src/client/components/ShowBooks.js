@@ -1,42 +1,62 @@
 import React from "react";
-import Cover from "../images/ReactJSEssentials.png"
-import Booksdb from "./fakeData/booksdb.json"
-
-
-
+import data from "./data.json";
+import {Card} from "antd";
+import "./scss/AppDom.scss";
+import "./scss/antd.scss";
 
 export default class ShowBooks extends React.Component {
-
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
-            books: Booksdb
-        }
+            data: data,
+        };
 
-        this.books = this.state.books.map((book, key) => 
-        <li key={books.id}>{books.title}</li>)
+        this.books = this.state.data.map((book, key) => (
+            // <li key={book.id}>{book.title} {book.author} {book.releaseDate} {book.ISBN}</li>
 
+            <div>
+                <div
+                    className="bookContainer"
+                    style={{background: "#ECECEC", padding: "30px"}}>
+
+                    <Card
+                        title={book.title}
+                        key={book.id}
+                        bordered={false}
+                        style={{width: 300}}>
+
+                        <img
+                            className="bookCover"
+                            src={book.cover}
+                            alt={book.title}
+                        />
+
+                        <p>{book.availability}</p>
+                        <p>{book.author}</p>
+                        <p>{book.releaseDate}</p>
+                    </Card>
+                    
+                </div>
+            </div>
+        ));
     }
 
     render() {
-        return( 
+        return (
             <div>
-                <ul>
-                    {this.props.books}
-                </ul>
+                <ul>{this.books}</ul>
             </div>
-        )
+        );
     }
 }
 
-
 // Ce code de "carte" va servir pour l'affichage des livres
 
-{/* <div style={{ background: '#ECECEC', padding: '30px' }}>
+/* <div style={{ background: '#ECECEC', padding: '30px' }}>
 <Card title="Card title" bordered={false} style={{ width: 300 }}>
   <p>Card content</p>
   <p>Card content</p>
   <p>Card content</p>
 </Card>
-</div> */}
+</div> */
