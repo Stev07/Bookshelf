@@ -11,7 +11,7 @@ export default class ShowBooks extends React.Component {
         };
 
         this.books = this.state.data.map(book => (
-            <div key={book.id}>
+            <div>
                 <div
                     className="bookContainer"
                     style={{background: "white", padding: "30px"}}>
