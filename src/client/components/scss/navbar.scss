@@ -2,7 +2,7 @@ $nav-height: 40px;
 
 nav{
     height: $nav-height;
-    font-size: 20px;
+    font-size: 22px;
     background-color: #50f5cb;
     border-bottom: 1px solid white;
 
@@ -12,10 +12,15 @@ nav{
         justify-content:space-around;
         padding-left:20%;
         padding-right:20%;
+        color:#50a8a2;
     }
 
     .navItem{
         list-style: none;
+
+        a{
+        color:#50a8a2;
+        }
 
         &:hover{
             font-weight: bold;

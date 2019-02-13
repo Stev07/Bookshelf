@@ -121,6 +121,6 @@ module.exports = env => {
         },
         devServer: {
             historyApiFallback: true,
-        },
+            },
     };
 };

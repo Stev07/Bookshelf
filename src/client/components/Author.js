@@ -1,13 +1,16 @@
 import * as React from "react";
+import Header from "./Header";
+import NavBar from "./NavBar";
+import "./scss/AppDom.scss";
 
-class Author extends React.Component {
+export default class Author extends React.Component {
     render() {
         return (
             <div>
-                <p>{"Welcome bro"}</p>
+                <Header />
+                <NavBar />
+                {"AUTHORS"}
             </div>
         );
     }
 }
-
-export default Author;

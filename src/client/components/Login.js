@@ -2,6 +2,7 @@ import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 class Login extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Login extends React.Component {
 
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePass = this.handleChangePass.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChangeEmail(event) {
@@ -22,6 +24,18 @@ class Login extends React.Component {
     handleChangePass(event) {
         this.setState({passValue: event.target.value});
     }
+
+    handleSubmit = event => {
+        event.preventDefault();
+
+        axios.post(`/api/users/`, {user}).then(res => {
+            user = res.data.user;
+            token = res.data.token;
+
+            localStorage.setItem("User", user);
+            localStorage.setItem("Token", token);
+        });
+    };
 
     render() {
         return (
@@ -44,22 +58,29 @@ class Login extends React.Component {
                             type="email"
                             className="inputUser"
                             placeholder="Email"
-                            value={this.state.emailValue}
                             onChange={this.handleChangeEmail}
+                            value={this.state.emailValue}
                         />
 
                         <input
                             type="password"
                             className="inputPassword"
                             placeholder="Password"
-                            value={this.state.passValue}
                             onChange={this.handleChangePass}
+                            value={this.state.passValue}
                         />
                     </form>
 
                     <div className="login">
                         <Link to="/home">
-                            <button className="btnLogin">{"Home"}</button>
+                            <button
+                                type="submit"
+                                className="btnLogin"
+                                onClick={() => {
+                                    this.handleSubmit();
+                                }}>
+                                {"Home"}
+                            </button>
                         </Link>
                     </div>
 

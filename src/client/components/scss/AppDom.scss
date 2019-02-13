@@ -10,16 +10,19 @@ body {
     overflow: hidden;
     display: grid;
     flex-direction: row;
-    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
     height: 20vh;
     background: linear-gradient(0deg, rgba(80,245,203,1) 8%, rgba(80,168,162,1) 70%);
 }
 
 .logoBox {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     grid-column: 1;
+    margin-left: 15%;
+    margin-top: 3%;
     
     .logoHeader {
         width: 10em;
@@ -107,7 +110,7 @@ body {
 .showSection {
     width: 100%;
     height: 50vh;
-    background-image: linear-gradient(to bottom, #a5c5cd, #aac8d0, #b0cbd3, #b5ced5, #bad1d8);
+    background-image: linear-gradient(0deg, rgba(239,244,242,1) 8%, rgba(255,255,255,1) 70%);
 
     display: flex;
     justify-content: center;
@@ -133,6 +136,11 @@ body {
 
 // CSS de la page BOOKS
 
+.dbContent {
+
+    width: 100%;
+
+}
 
 .card-container{
 
@@ -194,9 +202,55 @@ body {
         }
     }
     
-}
-.dbContent {
-
-    width: 100%;
-
-}
+    .bookContainer{
+        border: 1px solid rgba(0, 0, 0, 0.306);
+        
+        width: 25vw;
+        height: 75vh;
+        margin-bottom: 5%;
+    
+        text-align: center;
+    
+        background-color: rgba(173, 216, 230, 0.197);
+    
+    
+        .cardTitle {
+            margin: auto;
+            border-bottom-style: double;
+            border-bottom-color: cadetblue;
+            margin-bottom: 3%;
+            margin-top: 3%;
+    
+            h3 {
+                font-style: italic;
+            }
+        }
+    
+        .cardCover {
+            border: 1px solid black;
+            width: 150px;
+            height: 200px;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+    
+    
+            .bookCover {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    
+        .cardInfo {
+    
+            margin: 10%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            padding: 5%;
+            border-top-style: double;
+            border-top-color: cadetblue;
+        
+        }
+    }
+    
+    }

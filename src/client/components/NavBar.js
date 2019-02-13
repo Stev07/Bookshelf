@@ -13,11 +13,15 @@ export default class NavBar extends React.Component {
     };
 
     componentDidMount() {
+        this.fct();
+    }
+
+    fct = () => {
         const el = document.querySelector("nav");
 
         this.setState({top: el.offsetTop, height: el.offsetHeight});
         window.addEventListener("scroll", this.handleScroll);
-    }
+    };
 
     componentDidUpdate() {
         this.state.scroll > this.state.top
@@ -35,9 +39,11 @@ export default class NavBar extends React.Component {
                     <li className="navItem">
                         <Link to="/home"> {"Home"} </Link>
                     </li>
+                    <div>{"|"}</div>
                     <li className="navItem">
                         <Link to="/books"> {"Books"} </Link>
                     </li>
+                    <div>{"|"}</div>
                     <li className="navItem">
                         <Link to="/author"> {"Author"} </Link>
                     </li>
