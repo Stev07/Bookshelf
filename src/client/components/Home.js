@@ -11,6 +11,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import "./scss/AppDom.scss";
 import Cover from "../images/ReactJSEssentials.png";
+import ShowBooks from "./ShowBooks";
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class Home extends React.Component {
                     <p className="sectionName">{"LATEST ENTRIES"}</p>
                 </div>
                 <div className="showSection">
-                    <div className="bookCover">
+                    <div className="bookContainer">
                         <img
                             className="book"
                             src={this.state.cover}

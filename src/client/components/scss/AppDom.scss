@@ -113,7 +113,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    .bookCover {
+    .bookContainer {
         border: 1px solid black;
         width: 18%;
         padding: 0.5%;
@@ -126,5 +126,29 @@ body {
             width: 85%;
             height: 80%;
         }
+    }
+}
+
+// Fin CSS de la page HOME
+
+// CSS de la page BOOKS
+
+
+.card-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.dbContent {
+
+    width: 100%;
+
+    .bookContainer {
+        width: 100%;
+    }
+    .bookCover {
+        width: 30%;
+        height: 50%;
     }
 }
