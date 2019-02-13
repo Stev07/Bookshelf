@@ -17,7 +17,8 @@ import Login from "./components/Login";
 // import CoachInterface from "./components/CoachInterface";
 // import UserInterface from "./components/UserInterface";
 import Error from "./components/Error";
-
+import './components/scss/app.scss';
+import Modal from './components/Modal'
 export default class App extends React.Component {
     render() {
         return (
@@ -28,6 +29,7 @@ export default class App extends React.Component {
                         <Route path="/home" component={Home} />
                         <Route path="/books" component={Books} />
                         <Route path="/author" component={Author} />
+                        <Route path="/user" component={Modal} />
                         <Route component={Error} />
                     </Switch>
                 </div>
