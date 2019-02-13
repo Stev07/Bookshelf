@@ -1,8 +1,6 @@
 import React from "react";
 import data from "./data.json";
-import {Card} from "antd";
 import "./scss/AppDom.scss";
-import "./scss/antd.scss";
 
 export default class ShowBooks extends React.Component {
     constructor() {
@@ -13,27 +11,29 @@ export default class ShowBooks extends React.Component {
         };
 
         this.books = this.state.data.map(book => (
-            // <li key={book.id}>{book.title} {book.author} {book.releaseDate} {book.ISBN}</li>
-
             <div>
                 <div
                     className="bookContainer"
                     style={{background: "white", padding: "30px"}}>
-                    <Card
-                        title={book.title}
+                    <div
+                        className="cardTitle"
                         key={book.id}
                         bordered={true}
                         style={{width: 300}}>
+                        <h3>{book.title}</h3>
+                    </div>
+                    <div className="cardCover">
                         <img
                             className="bookCover"
                             src={book.cover}
                             alt={book.title}
                         />
-
+                    </div>
+                    <div className="cardInfo">
                         <p>{book.availability}</p>
                         <p>{book.author}</p>
                         <p>{book.releaseDate}</p>
-                    </Card>
+                    </div>
                 </div>
             </div>
         ));

@@ -135,20 +135,15 @@ body {
 
 
 .card-container{
+
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 .dbContent {
 
     width: 100%;
 
-    .bookContainer {
-        width: 100%;
-    }
-    .bookCover {
-        width: 30%;
-        height: 50%;
-    }
 }
