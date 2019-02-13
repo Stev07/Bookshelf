@@ -60,6 +60,8 @@
         font-size: 25px;
         color: #FFFFFF;
         margin-bottom: 20px;
+
+        &:active{background:none;}
     }
 }
 
@@ -131,7 +133,7 @@
     height: 150px;
     background: rgba(117,208,192,0.7);
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:900px;
     animation: bottomToTop 8s infinite,
                 rotate 8s infinite alternate;
@@ -142,7 +144,7 @@
     height: 150px;
     background:rgba(117,208,192,0.7);
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:800px;
     animation: bottomToTop 4s infinite, rotate 4s infinite;
 }
@@ -152,7 +154,7 @@
     height: 100px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:1100px;
     animation: bottomToTop 6s infinite, rotate 6s infinite alternate;
 }
@@ -162,7 +164,7 @@
     height: 150px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:200px;
     animation: bottomToTop 10s infinite, rotate 10s infinite;
 }
@@ -173,7 +175,7 @@
     height: 100px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:100px;
     animation: bottomToTop 12s infinite, rotate 12s infinite;
 }
@@ -183,7 +185,7 @@
     height: 150px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:1250px;
     animation: bottomToTop 7s infinite, rotate 7s infinite alternate;
 }
@@ -193,7 +195,7 @@
     height: 100px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:700px;
     animation: bottomToTop 14s infinite, rotate 14s infinite;
 }
@@ -203,7 +205,7 @@
     height: 150px;
     background: rgba(117,208,192,0.7);;
     position: absolute;
-    top:850px;
+    bottom: -200px;
     right:400px;
     animation: bottomToTop 15s infinite, rotate 15s infinite alternate;
 }

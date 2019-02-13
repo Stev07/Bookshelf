@@ -1,13 +1,16 @@
 import * as React from "react";
+import Header from "./Header";
+import NavBar from "./NavBar";
+import "./scss/AppDom.scss";
 
-class Books extends React.Component {
+export default class Books extends React.Component {
     render() {
         return (
             <div>
-                <p>{"Books list"}</p>
+                <Header />
+                <NavBar />
+                {"BOOKS"}
             </div>
         );
     }
 }
-
-export default Books;
