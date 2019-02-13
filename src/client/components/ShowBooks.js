@@ -13,10 +13,8 @@ export default class ShowBooks extends React.Component {
         };
 
         this.books = this.state.data.map(book => (
-            <div key={book.id}>
-                <div
-                    className="bookContainer"
-                    style={{background: "white", padding: "30px"}}>
+            <div>
+                <div className="bookContainer">
                     <div
                         className="cardTitle"
                         key={book.id}
@@ -33,9 +31,26 @@ export default class ShowBooks extends React.Component {
                         />
                     </div>
                     <div className="cardInfo">
-                        <p>{book.availability}</p>
-                        <p>{book.author}</p>
-                        <p>{book.releaseDate}</p>
+                        <p>
+                            {"Author : "}
+                            {book.author}
+                        </p>
+                        <p>
+                            {"Release date : "}
+                            {book.releaseDate}
+                        </p>
+                        <p>
+                            {"Language : "}
+                            {book.language}
+                        </p>
+                        <p>
+                            {"Physical : "}
+                            {book.physical}
+                        </p>
+                        <p>
+                            {"Ebook : "}
+                            {book.ebook}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -70,13 +85,3 @@ export default class ShowBooks extends React.Component {
         );
     }
 }
-
-// Ce code de "carte" va servir pour l'affichage des livres
-
-/* <div style={{ background: '#ECECEC', padding: '30px' }}>
-<Card title="Card title" bordered={false} style={{ width: 300 }}>
-  <p>Card content</p>
-  <p>Card content</p>
-  <p>Card content</p>
-</Card>
-</div> */

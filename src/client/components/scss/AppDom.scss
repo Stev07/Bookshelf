@@ -150,6 +150,57 @@ body {
     justify-content: space-around;
     margin: auto;
     padding: 3%;
+
+    .bookContainer{
+        border: 1px solid rgba(0, 0, 0, 0.306);
+        
+        width: 25vw;
+        height: 75vh;
+        margin-bottom: 5%;
+
+        text-align: center;
+
+        background-color: rgba(173, 216, 230, 0.197);
+
+
+        .cardTitle {
+            margin: auto;
+            border-bottom-style: double;
+            border-bottom-color: cadetblue;
+            margin-bottom: 3%;
+            margin-top: 3%;
+
+            h3 {
+                font-style: italic;
+            }
+        }
+
+        .cardCover {
+            border: 1px solid black;
+            width: 150px;
+            height: 200px;
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
+
+
+            .bookCover {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .cardInfo {
+
+            margin: 10%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            padding: 5%;
+            border-top-style: double;
+            border-top-color: cadetblue;
+        
+        }
+    }
     
     .bookContainer{
         border: 1px solid rgba(0, 0, 0, 0.306);
