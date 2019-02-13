@@ -78,8 +78,9 @@ module.exports = env => {
                     use: [
                         "style-loader", // creates style nodes from JS strings
                         "css-loader", // translates CSS into CommonJS
-                        "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                    ]},
+                        "sass-loader", // compiles Sass to CSS, using Node Sass by default
+                    ],
+                },
                 {
                     test: /\.js$/,
                     exclude: [/node_modules/],
@@ -119,6 +120,9 @@ module.exports = env => {
         output: {
             path: resolve(__dirname, "./bin/client"),
             filename: env === "dev" ? "js/bundle.js" : "js/[chunkhash].js",
+        },
+        devServer: {
+            historyApiFallback: true,
         },
     };
 };

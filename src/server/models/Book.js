@@ -26,6 +26,11 @@ const BookSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
     },
+    image: {
+        type: String,
+        default:
+            "http://alinea.lu/wp-content/uploads/2018/07/motivation___the_answer_by_songue-d3d746g.jpg",
+    },
 });
 
-module.exports = new mongoose.Model("Book", BookSchema);
+module.exports = mongoose.model("Book", BookSchema);

