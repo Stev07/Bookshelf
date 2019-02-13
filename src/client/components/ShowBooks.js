@@ -12,20 +12,18 @@ export default class ShowBooks extends React.Component {
             data: data,
         };
 
-        this.books = this.state.data.map((book, key) => (
+        this.books = this.state.data.map(book => (
             // <li key={book.id}>{book.title} {book.author} {book.releaseDate} {book.ISBN}</li>
 
-            <div >
+            <div>
                 <div
                     className="bookContainer"
                     style={{background: "white", padding: "30px"}}>
-
                     <Card
                         title={book.title}
                         key={book.id}
                         bordered={true}
                         style={{width: 300}}>
-
                         <img
                             className="bookCover"
                             src={book.cover}
@@ -36,7 +34,6 @@ export default class ShowBooks extends React.Component {
                         <p>{book.author}</p>
                         <p>{book.releaseDate}</p>
                     </Card>
-
                 </div>
             </div>
         ));
