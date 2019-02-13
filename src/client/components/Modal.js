@@ -19,13 +19,18 @@ class Modal extends Component {
   render() {
     return (
       <div className="modal-container">
-        <div className="inner-modal">
+        <div className="title-container">
           <h3>User settings</h3>
+        </div>          
+        <div className="inner-modal">
           <div className="user-info">
+          <div className="modal-title">
+        <h3>User ettings</h3>
+        </div>
             <form action="post">
-              <span className="input-container"><p>First Name: </p><input type="text"/></span>
-              <span className="input-container"><p>Lat Name:  </p><input type="text"/></span>
-              <span className="input-container"><p>Class Name:</p><input type="text"/></span>
+              <span className="input-container"><p>First Name:</p> <p>Jean</p> </span>
+              <span className="input-container"><p>Lat Name:  </p> <p>Neymar</p> </span>
+              <span className="input-container"><p>Class:</p> <p>Hamilton</p> </span>
               <span className="input-container"><p>Email:</p> <input type="mail"/></span>
               <span className="input-container"><p>Password:</p> <input type="password"/></span>
               <span className="input-container"><p>Password:</p> <input type="password"/></span>
