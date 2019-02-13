@@ -1,7 +1,7 @@
 import * as React from "react";
-import Header from "./Header";
+import ShowBooks from "./ShowBooks";
 import NavBar from "./NavBar";
-import "./scss/AppDom.scss";
+import Header from "./Header";
 
 export default class Books extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export default class Books extends React.Component {
             <div>
                 <Header />
                 <NavBar />
-                {"BOOKS"}
+                <ShowBooks />
             </div>
         );
     }
