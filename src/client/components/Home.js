@@ -31,7 +31,7 @@ export default class Home extends React.Component {
                     <p className="sectionName">{"LATEST ENTRIES"}</p>
                 </div>
                 <div className="showSection">
-                    <div className="bookCover">
+                    <div className="bookContainer">
                         <img
                             className="book"
                             src={this.state.cover}

@@ -15,15 +15,15 @@ export default class ShowBooks extends React.Component {
         this.books = this.state.data.map((book, key) => (
             // <li key={book.id}>{book.title} {book.author} {book.releaseDate} {book.ISBN}</li>
 
-            <div>
+            <div >
                 <div
                     className="bookContainer"
-                    style={{background: "#ECECEC", padding: "30px"}}>
+                    style={{background: "white", padding: "30px"}}>
 
                     <Card
                         title={book.title}
                         key={book.id}
-                        bordered={false}
+                        bordered={true}
                         style={{width: 300}}>
 
                         <img
@@ -36,7 +36,7 @@ export default class ShowBooks extends React.Component {
                         <p>{book.author}</p>
                         <p>{book.releaseDate}</p>
                     </Card>
-                    
+
                 </div>
             </div>
         ));
@@ -44,8 +44,8 @@ export default class ShowBooks extends React.Component {
 
     render() {
         return (
-            <div>
-                <ul>{this.books}</ul>
+            <div className="dbContent">
+                <div className="card-container">{this.books}</div>
             </div>
         );
     }
