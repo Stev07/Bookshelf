@@ -9,7 +9,7 @@
 import express from "express";
 import path from "path";
 
-import router from './routes/Api.routes';
+import router from "./routes/Api.routes";
 
 const bodyParser = require("body-parser");
 
@@ -32,10 +32,10 @@ mongoose
     .catch(err => console.log(err));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
-app.use('/api', router);
+app.use("/api", router);
 
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
