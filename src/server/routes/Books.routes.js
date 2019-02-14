@@ -1,35 +1,7 @@
 const express = require("express");
 const Books = require("../models/Book");
-/* const User = require("../models/User");
-const jwt = require("jsonwebtoken");
-const SECRET_TO_CHANGE = "ChangeThisSecretToken"; */
 
 let router = new express.Router();
-
-/* const isCoach = (req, res, next) => {
-    const token = req.body.token;
-
-    const user_id = jwt.verify(token, SECRET_TO_CHANGE).user;
-
-    User.findById({
-        _id: user_id,
-    })
-        .then(result => {
-            if (!result.coach) {
-                res.send("Vous ne pouvez pas faire ça, vous n'êtes pas coach.");
-                return;
-            }
-            next();
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).send(
-                "Une erreur de base de données à été trouvée. Conctacté votre administrateur",
-                err,
-            );
-            return;
-        });
-}; */
 
 router.get("/:id", (req, res) => {
     const id = req.params.id;
@@ -102,13 +74,13 @@ router.post("/", (req, res) => {
         });
 });
 
-/* import seedBooks from "../seeds/Books.seed";
+import seedBooks from "../seeds/Books.seed";
 
 router.post("/ultimate/seeds", (req, res) => {
     console.log(req);
     console.log(seedBooks);
     seedBooks();
     res.send("WORKED");
-}); */
+});
 
 module.exports = router;
