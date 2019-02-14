@@ -9,16 +9,33 @@
 import express from "express";
 import path from "path";
 
+import router from "./routes/Api.routes";
+
+const bodyParser = require("body-parser");
+
 const {APP_PORT} = process.env;
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, "../../bin/client")));
+const mongoose = require("mongoose");
+const uri = "mongodb://mongo/bookshelf";
+const connOptions = {
+    useNewUrlParser: true,
+    authSource: "admin",
+    user: "dev",
+    pass: "dev",
+};
 
-app.get("/hello", (req, res) => {
-    console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
-    res.send("Hello, World!");
-});
+mongoose
+    .connect(uri, connOptions)
+    .then(() => console.log("connected"))
+    .catch(err => console.log(err));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(express.static(path.resolve(__dirname, "../../bin/client")));
+app.use("/api", router);
 
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
