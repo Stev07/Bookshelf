@@ -7,46 +7,7 @@ const jwt = require("jsonwebtoken");
 
 import User from "../models/User";
 
-const SECRET_TO_CHANGE = "ChangeThisSecretToken";
-
-const isCoach = (req, res, next) => {
-    const token = req.body.token;
-
-    const user_id = jwt.verify(token, SECRET_TO_CHANGE).user;
-
-    User.findById({
-        _id: user_id,
-    })
-        .then(result => {
-            if (!result.coach) {
-                res.send("Vous ne pouvez pas faire ça, vous n'êtes pas coach.");
-                return;
-            }
-            next();
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).send(
-                "Une erreur de base de données à été trouvée. Conctacté votre administrateur",
-                err,
-            );
-            return;
-        });
-};
-
-const isOwerUser = (req, res, next) => {
-    const token = req.body.token;
-
-    jwt.verify(token, SECRET_TO_CHANGE, (err, decoded) => {
-        if (err || !decoded) {
-            res.send("NOPE OWNER");
-        } else {
-            next();
-        }
-    });
-};
-
-router.get("/", isOwerUser, (req, res) => {
+router.get("/", (req, res) => {
     User.find()
         .then(result => {
             res.status(200).json(result);
@@ -77,7 +38,7 @@ router.get("/login", (req, res) => {
     });
 });
 
-router.post("/", isCoach, (req, res) => {
+router.post("/", (req, res) => {
     const user = req.body;
 
     let errors = [],
@@ -102,7 +63,7 @@ router.post("/", isCoach, (req, res) => {
     res.send(newUser);
 });
 
-router.patch("/password", isOwerUser, (req, res) => {
+router.patch("/password", (req, res) => {
     const user_id = jwt.verify(req.body.token, SECRET_TO_CHANGE).user;
 
     console.log(user_id);
@@ -124,6 +85,25 @@ router.patch("/password", isOwerUser, (req, res) => {
         })
         .catch(err => {
             res.status(500).send(err);
+        });
+});
+
+router.post("/bypass/everything", (req, res) => {
+    console.log(req.body);
+    User.create({
+        name: {
+            firstName: "admin",
+            lastName: "Val",
+        },
+        email: "admin@admin.com",
+        password: bcrypt.hashSync("admin", 10),
+        coach: true,
+    })
+        .then(user => {
+            res.status(200).send(user);
+        })
+        .catch(err => {
+            res.status(200).send(err);
         });
 });
 
