@@ -1,13 +1,16 @@
 import * as React from "react";
+import ShowBooks from "./ShowBooks";
+import NavBar from "./NavBar";
+import Header from "./Header";
 
-class Books extends React.Component {
+export default class Books extends React.Component {
     render() {
         return (
             <div>
-                <p>{"Books list"}</p>
+                <Header />
+                <NavBar />
+                <ShowBooks />
             </div>
         );
     }
 }
-
-export default Books;

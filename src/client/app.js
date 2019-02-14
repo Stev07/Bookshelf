@@ -13,9 +13,8 @@ import Home from "./components/Home";
 import Author from "./components/Author";
 import Books from "./components/Books";
 import Login from "./components/Login";
-// import Login from "./components/Login";
-// import CoachInterface from "./components/CoachInterface";
-// import UserInterface from "./components/UserInterface";
+import CoachInterface from "./components/CoachInterface";
+import UserInterface from "./components/UserInterface";
 import Error from "./components/Error";
 
 export default class App extends React.Component {
@@ -28,6 +27,14 @@ export default class App extends React.Component {
                         <Route path="/home" component={Home} />
                         <Route path="/books" component={Books} />
                         <Route path="/author" component={Author} />
+                        <Route
+                            path="/coachinterface"
+                            component={CoachInterface}
+                        />
+                        <Route
+                            path="/userinterface"
+                            component={UserInterface}
+                        />
                         <Route component={Error} />
                     </Switch>
                 </div>

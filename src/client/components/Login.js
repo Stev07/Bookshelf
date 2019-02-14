@@ -1,15 +1,20 @@
 import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
-import NavBar from "./NavBar";
+import {Link} from "react-router-dom";
+import axios from "axios";
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {emailValue: "", passValue: ""};
+        this.state = {
+            emailValue: "",
+            passValue: "",
+        };
 
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePass = this.handleChangePass.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChangeEmail(event) {
@@ -20,10 +25,21 @@ class Login extends React.Component {
         this.setState({passValue: event.target.value});
     }
 
+    handleSubmit = event => {
+        event.preventDefault();
+
+        axios.post(`/api/users/`, {user}).then(res => {
+            user = res.data.user;
+            token = res.data.token;
+
+            localStorage.setItem("User", user);
+            localStorage.setItem("Token", token);
+        });
+    };
+
     render() {
         return (
             <div className="container">
-                <NavBar />
                 <div className="content">
                     <div className="logo">
                         <img
@@ -39,24 +55,33 @@ class Login extends React.Component {
 
                     <form className="user" onSubmit={this.handleSubmit}>
                         <input
-                            type="text"
+                            type="email"
                             className="inputUser"
                             placeholder="Email"
-                            value={this.state.emailValue}
                             onChange={this.handleChangeEmail}
+                            value={this.state.emailValue}
                         />
 
                         <input
                             type="password"
                             className="inputPassword"
                             placeholder="Password"
-                            value={this.state.passValue}
                             onChange={this.handleChangePass}
+                            value={this.state.passValue}
                         />
                     </form>
 
                     <div className="login">
-                        <button className="btnLogin">{"Login"}</button>
+                        <Link to="/home">
+                            <button
+                                type="submit"
+                                className="btnLogin"
+                                onClick={() => {
+                                    this.handleSubmit();
+                                }}>
+                                {"Home"}
+                            </button>
+                        </Link>
                     </div>
 
                     <div className="copyright">

@@ -9,14 +9,43 @@
 import * as React from "react";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import "./scss/AppDom.scss";
+import Cover from "../images/ReactJSEssentials.png";
 
 export default class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cover: Cover,
+        };
+    }
+
     render() {
         return (
             <div>
                 <Header />
                 <NavBar />
-                <h1>{"<Bookshelf />"}</h1>
+
+                <div className="section">
+                    <p className="sectionName">{"LATEST ENTRIES"}</p>
+                </div>
+                <div className="showSection">
+                    <div className="bookContainer">
+                        <img
+                            className="book"
+                            src={this.state.cover}
+                            alt="book"
+                        />
+                    </div>
+                </div>
+                <div className="section">
+                    <p className="sectionName">{"MOST RATED"}</p>
+                </div>
+                <div className="showSection" />
+                <div className="section">
+                    <p className="sectionName">{"LATEST REVIEWS"}</p>
+                </div>
+                <div className="showSection" />
             </div>
         );
     }
