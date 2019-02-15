@@ -2,8 +2,8 @@ import React from "react";
 import "./scss/AppDom.scss";
 import data from "./data.json"
 import {Modal} from "antd";
-import axios from 'axios'
-import Booksdb from './Booksdb'
+import axios from 'axios';
+import Footer from "./Footer";
 
 export default class ShowBooks extends React.Component {
 
@@ -16,7 +16,7 @@ export default class ShowBooks extends React.Component {
             data: data
         };
 
-        /* this.books = this.state.data.map(book => ( // Affichage des livres
+        this.books = this.state.data.map(book => ( // Affichage des livres
             <div>
                 <div className="bookContainer">
                     <div
@@ -57,7 +57,7 @@ export default class ShowBooks extends React.Component {
                     </div>
                 </div>
             </div>
-        )); */
+        ));
     }
 
     showModal = () => {
@@ -76,8 +76,7 @@ export default class ShowBooks extends React.Component {
     render() {
         return (
             <div className="dbContent">
-                {/* <div className="card-container">{this.books}</div> */}
-                <Booksdb />
+                <div className="card-container">{this.books}</div>
                 <Modal
                     title="Book"
                     visible={this.state.visible}

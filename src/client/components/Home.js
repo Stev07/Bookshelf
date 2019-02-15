@@ -38,6 +38,27 @@ export default class Home extends React.Component {
                             alt="book"
                         />
                     </div>
+                    <div className="bookContainer">
+                        <img
+                            className="book"
+                            src={this.state.cover}
+                            alt="book"
+                        />
+                    </div>
+                    <div className="bookContainer">
+                        <img
+                            className="book"
+                            src={this.state.cover}
+                            alt="book"
+                        />
+                    </div>
+                    <div className="bookContainer">
+                        <img
+                            className="book"
+                            src={this.state.cover}
+                            alt="book"
+                        />
+                    </div>
                 </div>
                 <div className="section">
                     <p className="sectionName">{"MOST RATED"}</p>
