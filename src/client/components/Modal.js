@@ -29,7 +29,7 @@ class Modal extends Component {
         </div>
             <form action="post">
               <span className="input-container"><p>First Name:</p> <p>Jean</p> </span>
-              <span className="input-container"><p>Lat Name:  </p> <p>Neymar</p> </span>
+              <span className="input-container"><p>Last Name:  </p> <p>Neymar</p> </span>
               <span className="input-container"><p>Class:</p> <p>Hamilton</p> </span>
               <span className="input-container"><p>Email:</p> <input type="mail"/></span>
               <span className="input-container"><p>Password:</p> <input type="password"/></span>
