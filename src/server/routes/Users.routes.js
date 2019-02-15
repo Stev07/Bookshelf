@@ -7,47 +7,53 @@ const jwt = require("jsonwebtoken");
 
 import User from "../models/User";
 
+const SECRET = "ChangeThisSecretToken";
+
 router.get("/", (req, res) => {
     User.find()
-        .then(result => {
-            res.status(200).json(result);
+        .then(users => {
+            res.status(200).json(users);
         })
         .catch(err => {
-            res.status(404).send("None found => ", err);
+            res.status(404).json({
+                errors: [err.message],
+            });
         });
 });
 
-router.get("/login", (req, res) => {
-    User.findOne({email: req.body.email}, (err, user) => {
-        if (err) {
-            return err;
-        }
+router.post("/login", (req, res) => {
+    console.log(1, req.body);
+    User.findOne({email: req.body.email})
+        .then(user => {
+            if (bcrypt.compareSync(req.body.password, user.password)) {
+                const token = jwt.sign({user: user._id}, SECRET);
 
-        if (bcrypt.compareSync(req.body.password, user.password)) {
-            const token = jwt.sign({user: user._id}, SECRET_TO_CHANGE);
-
-            res.status(200).send({
-                token: token,
-                user: user,
-            });
-        } else {
-            res.status(404).send({
-                error: ["Erreur de login: email ou mot de passe incorrecte"],
-            });
-        }
-    });
+                res.status(200).json({
+                    token,
+                    user,
+                });
+            } else {
+                res.status(404).send({
+                    error: [
+                        "Erreur de login: email ou mot de passe incorrecte",
+                    ],
+                });
+            }
+        })
+        .catch(err => {
+            res.send(err);
+        });
 });
 
 router.post("/", (req, res) => {
     const user = req.body;
 
-    let errors = [],
-        password = null;
+    let password = null;
 
     console.log(user);
 
     if (!validator.isEmail(user.email)) {
-        errors.push("Email non valide");
+        res.status(403).json({errors: ["Email non valide"]});
     }
 
     password = bcrypt.hashSync(user.password, 10);
@@ -60,11 +66,11 @@ router.post("/", (req, res) => {
     newUser.password = password;
     newUser.save();
 
-    res.send(newUser);
+    res.status(200).json(newUser);
 });
 
 router.patch("/password", (req, res) => {
-    const user_id = jwt.verify(req.body.token, SECRET_TO_CHANGE).user;
+    const user_id = jwt.verify(req.body.token, SECRET).user;
 
     console.log(user_id);
     User.findByIdAndUpdate({
@@ -78,13 +84,15 @@ router.patch("/password", (req, res) => {
             ) {
                 user.password = bcrypt.hashSync(req.body.password, 10);
                 user.save();
-                res.status(200).send("Mot de passe update!");
+                res.status(200).json({success: "Mot de passe modifié!"});
             } else {
-                res.status(400).send("Failed, retry please");
+                res.status(400).json({
+                    errors: ["Une erreur est survenue"],
+                });
             }
         })
         .catch(err => {
-            res.status(500).send(err);
+            res.status(500).send({errors: [err.message]});
         });
 });
 

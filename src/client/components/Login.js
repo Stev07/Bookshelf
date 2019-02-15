@@ -14,7 +14,6 @@ class Login extends React.Component {
 
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePass = this.handleChangePass.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChangeEmail(event) {
@@ -25,16 +24,22 @@ class Login extends React.Component {
         this.setState({passValue: event.target.value});
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
+    handleSubmit = () => {
+        axios
+            .post(`/api/users/login`, {
+                email: this.state.emailValue,
+                password: this.state.passValue,
+            })
+            .then(res => {
+                let user = res.data.user,
+                    token = res.data.token;
 
-        axios.post(`/api/users/`, {user}).then(res => {
-            user = res.data.user;
-            token = res.data.token;
-
-            localStorage.setItem("User", user);
-            localStorage.setItem("Token", token);
-        });
+                localStorage.setItem("User", user);
+                localStorage.setItem("Token", token);
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
     };
 
     render() {
@@ -76,9 +81,7 @@ class Login extends React.Component {
                             <button
                                 type="submit"
                                 className="btnLogin"
-                                onClick={() => {
-                                    this.handleSubmit();
-                                }}>
+                                onClick={this.handleSubmit}>
                                 {"Home"}
                             </button>
                         </Link>

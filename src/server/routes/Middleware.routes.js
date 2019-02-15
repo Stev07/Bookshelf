@@ -3,7 +3,7 @@ const SECRET = "ChangeThisSecretToken";
 const isCoach = (req, res, next) => {
     const token = req.body.token;
 
-    const user_id = jwt.verify(token, SECRET_TO_CHANGE).user;
+    const user_id = jwt.verify(token, SECRET).user;
 
     User.findById({
         _id: user_id,
@@ -28,7 +28,7 @@ const isCoach = (req, res, next) => {
 const isOwnerUser = (req, res, next) => {
     const token = req.body.token;
 
-    jwt.verify(token, SECRET_TO_CHANGE, (err, decoded) => {
+    jwt.verify(token, SECRET, (err, decoded) => {
         if (err || !decoded) {
             res.send("NOPE OWNER");
         } else {

@@ -6,14 +6,12 @@ let router = new express.Router();
 router.get("/:id", (req, res) => {
     const id = req.params.id;
 
-    Books.find({_id: id})
+    Books.findOne({_id: id})
         .then(book => {
-            res.status(200).send({
-                book: book,
-            });
+            res.status(200).json({book});
         })
         .catch(err => {
-            res.status(404).send({
+            res.status(404).json({
                 errors: ["Le livre n'a pas pu être trouvé!", err],
             });
         });
@@ -22,32 +20,23 @@ router.get("/:id", (req, res) => {
 router.get("/", (req, res) => {
     console.log(req.body);
     Books.find()
-        .then(results => {
-            console.log(results);
-            res.send(results);
+        .then(books => {
+            res.status(200).json({books});
         })
         .catch(err => {
-            console.log(err);
-            res.send(err);
+            res.status(500).send({errors: [err.message]});
         });
 });
 
-router.put("/:id", (req, res) => {
-    Books.find({_id: req.params.id})
+router.patch("/:id", (req, res) => {
+    Books.findOne({_id: req.params.id})
         .then(book => {
-            book.title = !req.body.title ? book.title : req.body.title;
-            book.isbn = !req.body.isbn ? book.isbn : req.body.isbn;
-            book.language = !req.body.language
-                ? book.language
-                : req.body.language;
-            book.author = !req.body.author ? book.author : req.body.author;
-            book.ebook = !req.body.ebook ? book.ebook : req.body.ebook;
-            book.physical = !req.body.physical
-                ? book.physical
-                : req.body.physical;
+            for (let property in req.body) {
+                book[property] = req.body[property];
+            }
 
             book.save();
-            res.send("Update succed");
+            res.status(200).send("Update succed");
         })
         .catch(err => {
             res.status(404).send(err);
@@ -74,13 +63,13 @@ router.post("/", (req, res) => {
         });
 });
 
-import seedBooks from "../seeds/Books.seed";
+/* import seedBooks from "../seeds/Books.seed";
 
 router.post("/ultimate/seeds", (req, res) => {
     console.log(req);
     console.log(seedBooks);
     seedBooks();
     res.send("WORKED");
-});
+}); */
 
 module.exports = router;

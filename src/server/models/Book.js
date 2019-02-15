@@ -31,6 +31,14 @@ const BookSchema = new mongoose.Schema({
         default:
             "http://alinea.lu/wp-content/uploads/2018/07/motivation___the_answer_by_songue-d3d746g.jpg",
     },
+    borrowings: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "borrowings",
+    },
+    reviews: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "reviews",
+    },
 });
 
 module.exports = mongoose.model("Book", BookSchema);

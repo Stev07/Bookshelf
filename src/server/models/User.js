@@ -24,6 +24,14 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    borrowings: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "borrowings",
+    },
+    reviews: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "reviews",
+    },
 });
 
 module.exports = mongoose.model("User", UserSchema);
