@@ -27,14 +27,23 @@ class Login extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        const params = {
+            email: this.state.emailValue,
+            password: this.state.passValue,
+        };
 
-        axios.post(`/api/users/`, {user}).then(res => {
-            user = res.data.user;
-            token = res.data.token;
+        axios
+            .post(`/api/users/login`, {
+                params: params,
+            })
+            .then(res => {
+                const user = res.data.user;
+                const token = res.data.token;
 
-            localStorage.setItem("User", user);
-            localStorage.setItem("Token", token);
-        });
+                console.log(token);
+                localStorage.setItem("User", user);
+                localStorage.setItem("Token", token);
+            });
     };
 
     render() {
@@ -76,9 +85,7 @@ class Login extends React.Component {
                             <button
                                 type="submit"
                                 className="btnLogin"
-                                onClick={() => {
-                                    this.handleSubmit();
-                                }}>
+                                onClick={this.handleSubmit}>
                                 {"Home"}
                             </button>
                         </Link>

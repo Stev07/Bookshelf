@@ -74,9 +74,10 @@ export default class ShowBooks extends React.Component {
             <div className="dbContent">
                 <div className="card-container">{this.books}</div>
                 <Modal
-                    title="Basic Modal"
+                    title="Book"
                     visible={this.state.visible}
-                    onCancel={this.handleCancel}>
+                    onCancel={this.handleCancel}
+                    cancelText={"Close"}>
                     <p>{"Some contents..."}</p>
                     <p>{"Some contents..."}</p>
                     <p>{"Some contents..."}</p>
