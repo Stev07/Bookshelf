@@ -258,6 +258,18 @@ body {
 
     
     @media all and (max-width: 768px) {
+        .header{
+            height: 100px;
+
+            .navLinks{
+                width: 100vw;
+                justify-content: space-between;
+            }
+
+            .userBox{
+                align-items: flex-end;
+            }
+        }
         .logoBox{
             width: 65%;
             align-items: center;
@@ -272,10 +284,11 @@ body {
 
         .section{
             height: 40px;
-        }
 
-        .sectionName{
-        
+            .sectionName{
+                font-size: 20px;
+                font-weight: bold;
+            }
         }
 
         
