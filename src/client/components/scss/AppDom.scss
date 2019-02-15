@@ -25,7 +25,7 @@ body {
     margin-top: 3%;
     
     .logoHeader {
-        width: 10em;
+        width: 9em;
     }
 }
 
@@ -68,7 +68,7 @@ body {
         border-radius: 100px;
         background-color: white;
 
-        font-size: x-large;
+        font-size:x-large;
         margin-right: 4rem;
         margin-left: 1rem;
 
@@ -80,7 +80,7 @@ body {
             text-align: right;
             margin: 1rem;
 
-        }  
+        }
     }
 }
 
@@ -264,6 +264,18 @@ body {
         }
         .helloUser{
             display: none;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        .section{
+            height: 40px;
+        }
+
+        .sectionName{
+            font-size:
         }
 
         
