@@ -2,6 +2,7 @@ import * as React from "react";
 import ShowBooks from "./ShowBooks";
 import NavBar from "./NavBar";
 import Header from "./Header";
+import Footer from "./Footer"
 
 export default class Books extends React.Component {
     render() {
@@ -10,6 +11,7 @@ export default class Books extends React.Component {
                 <Header />
                 <NavBar />
                 <ShowBooks />
+                <Footer />
             </div>
         );
     }

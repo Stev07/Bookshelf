@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
     Books.find()
         .then(results => {
             console.log(results);
-            res.send(results);
+            res.json(results);
         })
         .catch(err => {
             console.log(err);
