@@ -1,62 +1,238 @@
-[
-    {
-    "language": "Français",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831c6",
-    "title": "HTML5 Une référence pour le développeur web",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "R. Rimelé",
-    "__v": 0
+[{
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c6",
+        "title": "HTML5 Une référence pour le développeur web",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "R. Rimelé",
+        "__v": 0
     },
     {
-    "language": "English",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831c9",
-    "title": "The big book of team building games",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "Newstorm/Scannell",
-    "__v": 0
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c9",
+        "title": "The big book of team building games",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Newstorm/Scannell",
+        "__v": 0
     },
     {
-    "language": "English",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831c8",
-    "title": "Responsive Design: Patterns & Principles",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "Ethan Marcotte",
-    "__v": 0
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c8",
+        "title": "Responsive Design: Patterns & Principles",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Ethan Marcotte",
+        "__v": 0
     },
     {
-    "language": "English",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831c7",
-    "title": "Design Patterns",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "Freeman & Freeman",
-    "__v": 0
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c7",
+        "title": "Design Patterns",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Freeman & Freeman",
+        "__v": 0
     },
     {
-    "language": "Français",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831ca",
-    "title": "Javascript Les bons éléments",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "Pearson",
-    "__v": 0
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831ca",
+        "title": "Javascript Les bons éléments",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Pearson",
+        "__v": 0
     },
     {
-    "language": "Français",
-    "ebook": false,
-    "physical": true,
-    "_id": "5c63f6e0f3a6fb0090d831cb",
-    "title": "Exercices for Programmers",
-    "isbn": "LOLOLOLOLOLOL",
-    "author": "Hogan",
-    "__v": 0
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831cb",
+        "title": "Exercices for Programmers",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Hogan",
+        "__v": 0
+    }, {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c6",
+        "title": "HTML5 Une référence pour le développeur web",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "R. Rimelé",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c9",
+        "title": "The big book of team building games",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Newstorm/Scannell",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c8",
+        "title": "Responsive Design: Patterns & Principles",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Ethan Marcotte",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c7",
+        "title": "Design Patterns",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Freeman & Freeman",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831ca",
+        "title": "Javascript Les bons éléments",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Pearson",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831cb",
+        "title": "Exercices for Programmers",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Hogan",
+        "__v": 0
+    }, {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c6",
+        "title": "HTML5 Une référence pour le développeur web",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "R. Rimelé",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c9",
+        "title": "The big book of team building games",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Newstorm/Scannell",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c8",
+        "title": "Responsive Design: Patterns & Principles",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Ethan Marcotte",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c7",
+        "title": "Design Patterns",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Freeman & Freeman",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831ca",
+        "title": "Javascript Les bons éléments",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Pearson",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831cb",
+        "title": "Exercices for Programmers",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Hogan",
+        "__v": 0
+    }, {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c6",
+        "title": "HTML5 Une référence pour le développeur web",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "R. Rimelé",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c9",
+        "title": "The big book of team building games",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Newstorm/Scannell",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c8",
+        "title": "Responsive Design: Patterns & Principles",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Ethan Marcotte",
+        "__v": 0
+    },
+    {
+        "language": "English",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831c7",
+        "title": "Design Patterns",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Freeman & Freeman",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831ca",
+        "title": "Javascript Les bons éléments",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Pearson",
+        "__v": 0
+    },
+    {
+        "language": "Français",
+        "ebook": false,
+        "physical": true,
+        "_id": "5c63f6e0f3a6fb0090d831cb",
+        "title": "Exercices for Programmers",
+        "isbn": "LOLOLOLOLOLOL",
+        "author": "Hogan",
+        "__v": 0
     }
-    ]
+]

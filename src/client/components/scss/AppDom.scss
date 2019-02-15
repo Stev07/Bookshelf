@@ -86,6 +86,24 @@ body {
 
 // Fin du CSS Header
 
+// CSS du footer
+
+.footer {
+    width: 100%;
+    height: 8vh;
+    background: #50f5cb;
+
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 3vh;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+// FIN CSS du Footer
+
 // CSS de la page HOME
 
 .section {
@@ -291,5 +309,8 @@ body {
             }
         }
 
+        .footer {
+            display: none;
+        }
         
     }

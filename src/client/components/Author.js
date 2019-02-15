@@ -2,6 +2,7 @@ import * as React from "react";
 import Header from "./Header";
 import NavBar from "./NavBar";
 import "./scss/AppDom.scss";
+import Footer from "./Footer";
 
 export default class Author extends React.Component {
     render() {
@@ -10,6 +11,7 @@ export default class Author extends React.Component {
                 <Header />
                 <NavBar />
                 {"AUTHORS"}
+                <Footer />
             </div>
         );
     }

@@ -2,6 +2,7 @@ import * as React from "react";
 import {Link} from "react-router-dom";
 import "./scss/navbar.scss";
 
+
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);

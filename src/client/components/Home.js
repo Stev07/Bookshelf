@@ -11,6 +11,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import "./scss/AppDom.scss";
 import Cover from "../images/ReactJSEssentials.png";
+import Footer from "./Footer";
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -46,6 +47,7 @@ export default class Home extends React.Component {
                     <p className="sectionName">{"LATEST REVIEWS"}</p>
                 </div>
                 <div className="showSection" />
+                <Footer />
             </div>
         );
     }
