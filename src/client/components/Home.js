@@ -46,6 +46,7 @@ export default class Home extends React.Component {
                     <p className="sectionName">{"LATEST REVIEWS"}</p>
                 </div>
                 <div className="showSection" />
+                <Footer />
             </div>
         );
     }

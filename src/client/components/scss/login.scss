@@ -28,7 +28,7 @@
 }
 
 .logoBecode{
-    width:250px;
+    width:200px;
 }
 
 .welcome{
@@ -232,3 +232,41 @@
     }
 }
 
+
+
+@media all and (max-width: 768px) {
+    .content{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 35% 1fr 1fr 1fr 1fr ;
+    }
+
+    .welcome, .logo, .welcome, .login, .user, .copyright {
+        grid-column:1;  
+    }
+
+    .logoBecode{width:150px;}
+
+    .inputUser, .inputPassword{
+        width: 80%;
+        max-width: 90%; 
+        height: 80%;
+        max-height: 80%;
+        font-size: 90% !important;
+
+        &::placeholder{
+            font-size:25px;
+        }
+    }
+
+    .btnLogin{
+        width: 80%;
+        max-width: 90%;
+        height: 40% !important;
+        max-height: 40% !important;
+
+        button{
+            font-size:10px !important;
+        }
+    }
+    }

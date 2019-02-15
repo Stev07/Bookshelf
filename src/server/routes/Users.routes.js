@@ -7,6 +7,8 @@ const jwt = require("jsonwebtoken");
 
 import User from "../models/User";
 
+const SECRET = "ChangeThisSecretToken";
+
 router.get("/", (req, res) => {
     User.find()
         .then(result => {
@@ -18,13 +20,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    User.findOne({email: req.body.email}, (err, user) => {
+    console.log(req.params);
+    User.findOne({email: req.email}, (err, user) => {
         if (err) {
             return err;
         }
 
-        if (bcrypt.compareSync(req.body.password, user.password)) {
-            const token = jwt.sign({user: user._id}, SECRET_TO_CHANGE);
+        if (bcrypt.compareSync(req.password, user.password)) {
+            const token = jwt.sign({user: user._id}, SECRET);
 
             res.status(200).send({
                 token: token,
@@ -64,7 +67,7 @@ router.post("/", (req, res) => {
 });
 
 router.patch("/password", (req, res) => {
-    const user_id = jwt.verify(req.body.token, SECRET_TO_CHANGE).user;
+    const user_id = jwt.verify(req.body.token, SECRET).user;
 
     console.log(user_id);
     User.findByIdAndUpdate({

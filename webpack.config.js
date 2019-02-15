@@ -119,6 +119,8 @@ module.exports = env => {
             path: resolve(__dirname, "./bin/client"),
             filename: env === "dev" ? "js/bundle.js" : "js/[chunkhash].js",
         },
-        watch: env === "dev"
+        devServer: {
+            historyApiFallback: true,
+            },
     };
 };
