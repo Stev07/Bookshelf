@@ -24,6 +24,19 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    borrowings: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Borrowing",
+    },
+    reviews: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Review",
+    },
+    class: {
+        type: String,
+        default: "Hamilton",
+        required: true,
+    },
 });
 
 module.exports = mongoose.model("User", UserSchema);
