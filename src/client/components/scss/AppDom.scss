@@ -183,7 +183,7 @@ body {
     
         text-align: center;
     
-        background-color: rgba(173, 216, 230, 0.197);
+        background-color: rgba(251, 251, 251, 0.197);
     
     
         .cardTitle {
@@ -227,7 +227,7 @@ body {
     
     }
 
-
+// Responsive
     
     @media all and (max-width: 768px) {
         .header{
@@ -285,4 +285,4 @@ body {
                 
             }
         }
-    }
+        }

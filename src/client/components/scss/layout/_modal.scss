@@ -1,71 +1,163 @@
 .title-container{
+
   text-align: center;
-  height: 33px;  
-  background: #4F8C95; 
-  h3{
+  height: 6vh;  
+  background: #4F8C95;
+
+  h3 {
+
+
     color: #ffffff;
-    font-family: Roboto;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-style: normal;
     font-weight: normal;
-    line-height: normal;
-    font-size: 18px;
+    font-size: 4vh;
+    
   }
 }
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
 .modal-container{
   
+  margin: auto;
   background: #C4C4C4;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  font-family: 'Open Sans Condensed', sans-serif;
+
   .user-info{
+
+    margin: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
-    h3{
-
-      color: #ffffff;
+    
+    .infoBox {
+      width: 50%;
+      padding: 1% auto;
+      margin-right: 10%;
+      text-align: end;
+      font-size: 1.6vmax;
     }
-    
+
+    .details {
+      width: 50%;
+      text-align: start;
+      font-size: 1.6vmax;
+    }
+
   }
+
   .inner-modal{
-    max-width: 800px;
-    width: 650px;
-    height: 571px;
+
+    width: 80%;
+    height: 80%;
     display: block;
-    margin: 200px auto;
+    margin: 5% auto;
+    margin-top: 1%;
+    margin-bottom: 10%;
     display: flex;
-    
-    
+
     background: rgba(79, 140, 149, 0.46);
-    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.306);
+
     .user-info{
 
-      margin-top: 50px;
+      width: 80%;
+      margin: 1% auto;
+
     }
-    form{
+
+    form {
+
       display: flex;
       flex-direction: column;
+      width: 100%;
+      margin: 5% auto;
+
+      p {
+        justify-content: center;
+      }
+
+
       .input-container{
-      
+
         display: flex;
         justify-content: space-between;
+        margin: auto;
         
-        width: 400px;
-        height: 30px;
+        width: 100%;
+        height: 70%;
         color: #ffffff;
-        font-size: 18px;
-        input{
-          height: 15px;
-          border-radius: 50px;
-          border: none;
+        font-size: 2.5vh;
+
+        input {
+
+          height: 3vh;
+          width: 20vw;
+          color: black;
+          padding-left: 10%;
+          font-size: 60%;
+          border-radius: 30px;
+          border: 1px solid  rgba(0, 0, 0, 0.306);
+
         }
+
       }
-      button{
-        height: 60px;
-        width: 100px;
+
+      .buttonConfirm {
+
+        height: 4.5vh;
+        width: 8vw;
+        font-size: 1.5vmax;
+        margin: 5% auto;
+
         background-color: #4f8c95;
         color: #ffffff;
-        border: none;
+        border: 1px solid rgba(0, 0, 0, 0.306);
+
       }
     }
   }
+}
+
+@media all and (max-width: 768px) {
+  
+  .modal-container{
+
+    width: 100%;
+    height: 100vh;
+
+    .inner-modal{
+      margin-top: 15%;
+      width: 90%;
+      height: 45vh;
+    }
+
+    .user-info {
+      width: 100%;
+    }
+  
+    .infoBox {
+      justify-content: end;
+      font-size: 1vh;
+    }
+  
+    .buttonConfirm {
+  
+      width: 20% !important;
+      height: 4.5vh;
+  
+      p {
+        font-size: 2vh !important;
+      }
+  
+    }
+
+  }
+
 }
