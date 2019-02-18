@@ -1,0 +1,1032 @@
+{
+	"info": {
+		"_postman_id": "04f6e3c8-514b-4165-89ce-7b94ebd056d2",
+		"name": "Bookshelf",
+		"description": "Here's the bookshelf API documentation.\nRealize for BeCode in the Bookshelf project of Hamilton proms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get reviews for current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc5MTY3fQ.Ogt6hiWeW7PmWwwXPpKNnPA5gYUXp0_Rb17Ibt3duz8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users/reviews",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"reviews"
+							]
+						},
+						"description": "Get the review for the current user"
+					},
+					"response": []
+				},
+				{
+					"name": "Get list of all User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc5MTY3fQ.Ogt6hiWeW7PmWwwXPpKNnPA5gYUXp0_Rb17Ibt3duz8",
+									"description": "The token send by the login",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get a list of all users (Login and coach necessary)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get review for a User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc5MTY3fQ.Ogt6hiWeW7PmWwwXPpKNnPA5gYUXp0_Rb17Ibt3duz8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users/reviews/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"reviews",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c641aaaa6cda4022247ca51"
+								}
+							]
+						},
+						"description": "Get the reviews for a specific user"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Login to the Bookshelf app"
+					},
+					"response": [
+						{
+							"name": "localhost/api/users/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost/api/users/login",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "670"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29e-NiN7dYAiiEb6t7kI5k3apJcM1Xo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 Feb 2019 08:31:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc4NzExfQ.hk8h5KNdTzN0NIftoi1Tpzn7ifEopdtGyAU2jj03TZc\",\n    \"user\": {\n        \"name\": {\n            \"firstName\": \"admin\",\n            \"lastName\": \"Val\"\n        },\n        \"coach\": true,\n        \"borrowings\": [\n            \"5c66d7aaa1274307090d6899\",\n            \"5c66d7b823b08d0717c385ff\",\n            \"5c66db0ed2c0300805d35357\",\n            \"5c66db18d2c0300805d35358\",\n            \"5c66db19d2c0300805d35359\",\n            \"5c66db19d2c0300805d3535a\",\n            \"5c66db19d2c0300805d3535b\",\n            \"5c66db1dd2c0300805d3535c\"\n        ],\n        \"reviews\": [\n            \"5c66bf27a8362100c710dc2e\",\n            \"5c66c067729d7f01530a8467\"\n        ],\n        \"_id\": \"5c641aaaa6cda4022247ca51\",\n        \"email\": \"admin@admin.com\",\n        \"password\": \"$2a$10$I54p.0EW9/T/lXP7t4yjPu/1/G9m7Dazdd.G7xWWIYw0uW088XFHa\",\n        \"__v\": 10\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post new User (coach only)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc5MTY3fQ.Ogt6hiWeW7PmWwwXPpKNnPA5gYUXp0_Rb17Ibt3duz8",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Valentin",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Grégoire",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "valentin.gregoire91@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "meh",
+									"type": "text"
+								},
+								{
+									"key": "class",
+									"value": "Hamilton",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDc5MTY3fQ.Ogt6hiWeW7PmWwwXPpKNnPA5gYUXp0_Rb17Ibt3duz8",
+									"description": "Token provided by the login. Needs to be here to work",
+									"type": "text"
+								},
+								{
+									"key": "oldPassword",
+									"value": "yeah",
+									"description": "Old password to check anyway",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"description": "New password",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "admin",
+									"description": "New password confirmation",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/users/password",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								"password"
+							]
+						},
+						"description": "Change the password for the current user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get list Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						},
+						"description": "Get a list with all books contained in DB"
+					},
+					"response": []
+				},
+				{
+					"name": "Get intel from ONE book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c641f1657717a02aee17a33"
+								}
+							]
+						},
+						"description": "Get a book from its id"
+					},
+					"response": []
+				},
+				{
+					"name": "Check the borrowings of ONE book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books/borrowings/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books",
+								"borrowings",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c641f1557717a02aee17a32"
+								}
+							]
+						},
+						"description": "get the reviews for a specific book"
+					},
+					"response": []
+				},
+				{
+					"name": "Post new book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "LOLILOL",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Valou",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "Yapas",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "Japonais",
+									"type": "text"
+								},
+								{
+									"key": "ebook",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "physical",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://alinea.lu/wp-content/uploads/2018/07/motivation___the_answer_by_songue-d3d746g.jpg",
+									"description": "need to be an URL to work (no upload)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						},
+						"description": "IF COACH => Post a new book"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch new book",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "LOLILOLolololol",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Valou",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "Yapas",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "Japonais",
+									"type": "text"
+								},
+								{
+									"key": "ebook",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "physical",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://alinea.lu/wp-content/uploads/2018/07/motivation___the_answer_by_songue-d3d746g.jpg",
+									"description": "need to be an URL to work (no upload)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c6a7df06cd3ae0487e2f0e6"
+								}
+							]
+						},
+						"description": "Patch a existing book.\nYou can choose what to change, don't mind pushing everything tho."
+					},
+					"response": []
+				},
+				{
+					"name": "Get all reviews for ONE book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDgyNTEzfQ.BIv0OB7q1eX1iJadBrFH98ZwnpLxD12HLs4yHlF-kuw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/books/reviews/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"books",
+								"reviews",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c641f1557717a02aee17a32"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrowings",
+			"item": [
+				{
+					"name": "Get all borrowings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/borrowings",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"borrowings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post new borrowings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "5c66db19d2c0300805d35359",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/borrowings",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"borrowings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch to return a book",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/borrowings/return/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"borrowings",
+								"return",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c66d79a680f3406ed547dd2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get all reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/reviews",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a new review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "5c641f1557717a02aee17a32",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "Damn good book, mothafocka",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/reviews",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch a review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "book_id",
+									"value": "5c641f1557717a02aee17a32",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comment",
+									"value": "Damn good book, MothaFocka",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/reviews/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reviews",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c6a8dc3fd8a8706a5e7a2dc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWM2NDFhYWFhNmNkYTQwMjIyNDdjYTUxIiwiaWF0IjoxNTUwNDg1MDA3fQ.8O7neZGCmQMmk0r0IYhnacvMpswZ6SlUANb_DrVHHrU",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "5c641f1557717a02aee17a32",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost/api/reviews/:id",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"reviews",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5c6a8dc3fd8a8706a5e7a2dc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

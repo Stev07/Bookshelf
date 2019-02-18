@@ -5,13 +5,17 @@ const BorrowingSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Book",
     },
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
     startDate: {
         type: Date,
         required: true,
     },
     backDate: {
         type: Date,
-        default: null,
+        default: undefined,
         required: false,
     },
     returned: {

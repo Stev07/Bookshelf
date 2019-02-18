@@ -1,11 +1,24 @@
+import {isCoach, isLogged} from "./Middleware.routes";
+import Book from "../models/Book";
+import Review from "../models/Review";
+import Borrowings from "../models/Borrowing";
+
 const express = require("express");
-const Book = require("../models/Book");
-const Review = require("../models/Review");
-const Borrowings = require("../models/Borrowing");
 
 let router = new express.Router();
 
-router.get("/:id", (req, res) => {
+router.get("/", [isLogged], (req, res) => {
+    console.log(req.body);
+    Book.find()
+        .then(books => {
+            res.status(200).json({books});
+        })
+        .catch(err => {
+            res.status(500).send({errors: [err.message]});
+        });
+});
+
+router.get("/:id", [isLogged], (req, res) => {
     const id = req.params.id;
 
     Book.findOne({_id: id})
@@ -19,18 +32,20 @@ router.get("/:id", (req, res) => {
         });
 });
 
-router.get("/", (req, res) => {
-    console.log(req.body);
-    Book.find()
-        .then(books => {
-            res.status(200).json({books});
-        })
-        .catch(err => {
-            res.status(500).send({errors: [err.message]});
-        });
+router.post("/", [isLogged, isCoach], (req, res) => {
+    const data = req.body;
+
+    let book = new Book();
+
+    for (let property in data) {
+        book[property] = req.body[property];
+    }
+
+    book.save();
+    res.status(200).json(book);
 });
 
-router.patch("/:id", (req, res) => {
+router.patch("/:id", [isLogged, isCoach], (req, res) => {
     Book.findOne({_id: req.params.id})
         .then(book => {
             for (let property in req.body) {
@@ -45,45 +60,29 @@ router.patch("/:id", (req, res) => {
         });
 });
 
-router.post("/", (req, res) => {
-    const data = req.body;
-
-    let book = new Book();
-
-    for (let property in data) {
-        book[property] = req.body[property];
-    }
-
-    book.save();
-    res.status(200).json(book);
-});
-
-router.get("/:id/reviews", (req, res) => {
+router.get("/reviews/:id", [isLogged], (req, res) => {
     Book.findOne({_id: req.params.id})
         .then(book => {
             Review.find({_id: {$in: book.reviews}})
                 .then(reviews => {
-                    res.status(200).json({reviews: reviews});
-                    return;
+                    res.status(200).json({book: book, reviews: reviews});
                 })
                 .catch(err => {
-                    res.status(400).json({errors: [err]});
-                    return;
+                    res.status(400).json({errors: [err.message]});
                 });
         })
         .catch(err => {
-            res.status(404).send({errors: [err]});
-            return;
+            res.status(404).send({errors: [err.message]});
         });
 });
 
-router.get("/:id/borrowings", (req, res) => {
+router.get("/borrowings/:id", [isLogged], (req, res) => {
     Borrowings.find({book_id: req.params.id})
         .then(borrows => {
             res.status(200).json(borrows);
         })
         .catch(err => {
-            res.status(400).json({errors: [err]});
+            res.status(400).json({errors: [err.message]});
         });
 });
 

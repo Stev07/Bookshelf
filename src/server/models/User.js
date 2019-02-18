@@ -32,6 +32,11 @@ const UserSchema = new mongoose.Schema({
         type: [mongoose.Schema.Types.ObjectId],
         ref: "Review",
     },
+    class: {
+        type: String,
+        default: "Hamilton",
+        required: true,
+    },
 });
 
 module.exports = mongoose.model("User", UserSchema);

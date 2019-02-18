@@ -1,14 +1,14 @@
-const express = require("express");
-const Review = require("../models/Review");
-const User = require("../models/User");
-const Book = require("../models/Book");
-const jwt = require("jsonwebtoken");
+import User from "../models/User";
+import Review from "../models/Review";
+import Book from "../models/Book";
+import {SECRET, isLogged, isCoach} from "./Middleware.routes";
 
-const SECRET = "ChangeThisSecretToken";
+const express = require("express");
+const jwt = require("jsonwebtoken");
 
 let router = new express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", [isLogged], (req, res) => {
     Review.find()
         .then(reviews => {
             res.status(200).json({reviews});
@@ -18,43 +18,38 @@ router.get("/", (req, res) => {
         });
 });
 
-router.post("/", (req, res) => {
+router.post("/", [isLogged], (req, res) => {
     const user_id = jwt.verify(req.body.token, SECRET);
     const book_id = req.body.book_id;
 
-    let review = new Review(),
-        errors = [];
+    Review.create({
+        rating: req.body.rating,
+        date: Date.now(),
+        comment: req.body.comment,
+    })
+        .then(review => {
+            User.findOne({_id: user_id.user}).then(user => {
+                user.reviews.push(review._id);
+                user.save();
+            });
 
-    review.rating = req.body.rating;
-    review.date = Date.now();
-    review.comment = req.body.comment;
-    review.save();
+            Book.findOne({_id: book_id}).then(book => {
+                book.reviews.push(review._id);
+                book.save();
+            });
 
-    User.findOne({_id: user_id.user})
-        .then(user => {
-            user.reviews.push(review._id);
-            user.save();
+            res.status(200).json({review});
+            return;
         })
         .catch(err => {
-            errors.user = err.message;
+            res.status(403).json({
+                errors: ["Failed to add the reviews", err.message],
+            });
+            return;
         });
-
-    Book.findOne({_id: book_id})
-        .then(book => {
-            book.reviews.push(review._id);
-            book.save();
-        })
-        .catch(err => {
-            errors.book = err.message;
-        });
-
-    if (errors.length > 0) {
-        return res.status(500).send({errors});
-    }
-    res.status(200).send(review);
 });
 
-router.patch("/:id", (req, res) => {
+router.patch("/:id", [isLogged], (req, res) => {
     Review.findById(req.params.id)
         .then(review => {
             for (let property in req.body) {
@@ -69,10 +64,16 @@ router.patch("/:id", (req, res) => {
         });
 });
 
-router.delete("/:id", (req, res) => {
-    Review.find({_id: req.params.id}).remove(() => {
-        res.status(200).send("YUP");
-    });
+router.delete("/:id", [isLogged, isCoach], (req, res) => {
+    Review.find({_id: req.params.id})
+        .remove(() => {
+            res.status(200).json({
+                succed: ["Review successfuly removed from DB"],
+            });
+        })
+        .catch(err => {
+            res.status(404).json({errors: [err.message]});
+        });
 });
 
 module.exports = router;

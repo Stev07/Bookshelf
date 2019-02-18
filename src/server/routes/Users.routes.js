@@ -1,15 +1,15 @@
-const express = require("express");
+import User from "../models/User";
+import Review from "../models/Review";
+import {SECRET, isCoach, isLogged} from "./Middleware.routes";
 
-let router = new express.Router();
+const express = require("express");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-import User from "../models/User";
+let router = new express.Router();
 
-const SECRET = process.env.secret || "ChangeThisSecretToken";
-
-router.get("/", (req, res) => {
+router.get("/", [isLogged, isCoach], (req, res) => {
     User.find()
         .then(users => {
             res.status(200).json(users);
@@ -41,11 +41,11 @@ router.post("/login", (req, res) => {
             }
         })
         .catch(err => {
-            res.send(err);
+            res.status(404).send({errors: [err.message]});
         });
 });
 
-router.post("/", (req, res) => {
+router.post("/", [isLogged, isCoach], (req, res) => {
     const user = req.body;
 
     let password = null;
@@ -64,12 +64,13 @@ router.post("/", (req, res) => {
     newUser.name.lastName = user.lastName;
     newUser.email = user.email;
     newUser.password = password;
+    newUser.class = user.class;
     newUser.save();
 
     res.status(200).json({newUser});
 });
 
-router.patch("/password", (req, res) => {
+router.patch("/password", [isLogged], (req, res) => {
     const user_id = jwt.verify(req.body.token, SECRET).user;
 
     User.findByIdAndUpdate({
@@ -94,26 +95,43 @@ router.patch("/password", (req, res) => {
         });
 });
 
-router.get("/:id/reviews", (req, res) => {
-    User.findOne({_id: req.params.id})
-        .then(book => {
-            Review.find({_id: {$in: book.reviews}})
+router.get("/reviews", [isLogged], (req, res) => {
+    const user_id = jwt.verify(req.body.token, SECRET).user;
+
+    User.findOne({_id: user_id})
+        .then(user => {
+            Review.find({_id: {$in: user.reviews}})
                 .then(reviews => {
-                    res.status(200).json({reviews: reviews});
-                    return;
+                    res.status(200).json({user: user, reviews: reviews});
                 })
                 .catch(err => {
-                    res.status(400).json({errors: [err]});
-                    return;
+                    console.log(err.message);
+                    res.status(400).json({errors: [err.message]});
                 });
         })
         .catch(err => {
-            res.status(404).send({errors: [err]});
-            return;
+            res.status(404).send({errors: [err.message]});
         });
 });
 
-router.post("/bypass/everything", (req, res) => {
+router.get("/reviews/:id", [isLogged], (req, res) => {
+    User.findOne({_id: req.params.id})
+        .then(user => {
+            Review.find({_id: {$in: user.reviews}})
+                .then(reviews => {
+                    user.reviews = reviews;
+                    res.status(200).json({user: user, reviews: reviews});
+                })
+                .catch(err => {
+                    res.status(400).json({errors: [err.message]});
+                });
+        })
+        .catch(err => {
+            res.status(404).send({errors: [err.message]});
+        });
+});
+
+/* router.post("/bypass/everything", (req, res) => {
     console.log(req.body);
     User.create({
         name: {
@@ -131,5 +149,5 @@ router.post("/bypass/everything", (req, res) => {
             res.status(400).send(err);
         });
 });
-
+ */
 module.exports = router;
