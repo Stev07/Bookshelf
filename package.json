@@ -12,7 +12,9 @@
     "build:client": "npx webpack --progress --profile --colors",
     "work:client": "npx webpack-dev-server --env=dev --hot --progress",
     "build": "npm run build:server && npm run build:client",
-    "build:svg": "svgr -d svg/ components/"
+    "build:svg": "svgr -d svg/ components/",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "lint-staged": {
     "*.js": [
