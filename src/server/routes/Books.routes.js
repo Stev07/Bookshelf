@@ -1,12 +1,14 @@
 const express = require("express");
-const Books = require("../models/Book");
+const Book = require("../models/Book");
+const Review = require("../models/Review");
+const Borrowings = require("../models/Borrowing");
 
 let router = new express.Router();
 
 router.get("/:id", (req, res) => {
     const id = req.params.id;
 
-    Books.findOne({_id: id})
+    Book.findOne({_id: id})
         .then(book => {
             res.status(200).json({book});
         })
@@ -19,7 +21,7 @@ router.get("/:id", (req, res) => {
 
 router.get("/", (req, res) => {
     console.log(req.body);
-    Books.find()
+    Book.find()
         .then(books => {
             res.status(200).json({books});
         })
@@ -29,7 +31,7 @@ router.get("/", (req, res) => {
 });
 
 router.patch("/:id", (req, res) => {
-    Books.findOne({_id: req.params.id})
+    Book.findOne({_id: req.params.id})
         .then(book => {
             for (let property in req.body) {
                 book[property] = req.body[property];
@@ -46,29 +48,51 @@ router.patch("/:id", (req, res) => {
 router.post("/", (req, res) => {
     const data = req.body;
 
-    Books.create({
-        title: data.title,
-        isbn: data.isbn,
-        language: data.language,
-        author: data.author,
-        ebook: data.ebook,
-        physical: data.physical,
-        image: data.image,
-    })
+    let book = new Book();
+
+    for (let property in data) {
+        book[property] = req.body[property];
+    }
+
+    book.save();
+    res.status(200).json(book);
+});
+
+router.get("/:id/reviews", (req, res) => {
+    Book.findOne({_id: req.params.id})
         .then(book => {
-            res.status(200).send(book);
+            Review.find({_id: {$in: book.reviews}})
+                .then(reviews => {
+                    res.status(200).json({reviews: reviews});
+                    return;
+                })
+                .catch(err => {
+                    res.status(400).json({errors: [err]});
+                    return;
+                });
         })
         .catch(err => {
-            res.status(500).send(err);
+            res.status(404).send({errors: [err]});
+            return;
         });
 });
 
-/* import seedBooks from "../seeds/Books.seed";
+router.get("/:id/borrowings", (req, res) => {
+    Borrowings.find({book_id: req.params.id})
+        .then(borrows => {
+            res.status(200).json(borrows);
+        })
+        .catch(err => {
+            res.status(400).json({errors: [err]});
+        });
+});
+
+/* import seedBook from "../seeds/Book.seed";
 
 router.post("/ultimate/seeds", (req, res) => {
     console.log(req);
-    console.log(seedBooks);
-    seedBooks();
+    console.log(seedBook);
+    seedBook();
     res.send("WORKED");
 }); */
 

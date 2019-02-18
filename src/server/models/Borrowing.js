@@ -1,20 +1,23 @@
 const mongoose = require("mongoose");
 
 const BorrowingSchema = new mongoose.Schema({
+    book_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Book",
+    },
     startDate: {
         type: Date,
-        default: Date.now(),
         required: true,
     },
     backDate: {
         type: Date,
         default: null,
-        required: undefined,
-    },
-    state: {
-        type: String,
         required: false,
-        default: undefined,
+    },
+    returned: {
+        type: Boolean,
+        required: false,
+        default: false,
     },
 });
 

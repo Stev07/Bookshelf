@@ -26,11 +26,11 @@ const UserSchema = new mongoose.Schema({
     },
     borrowings: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: "borrowings",
+        ref: "Borrowing",
     },
     reviews: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: "reviews",
+        ref: "Review",
     },
 });
 

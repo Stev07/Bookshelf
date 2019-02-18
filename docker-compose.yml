@@ -6,6 +6,7 @@
       environment:
         NODE_ENV: "development"
         APP_PORT: 12345
+        SECRET: "I am A Boss OMG"
       volumes:
         - "./package.json:/src/app/package.json"
         - "./node_modules:/src/app/node_modules"

@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 import User from "../models/User";
 
-const SECRET = "ChangeThisSecretToken";
+const SECRET = process.env.secret || "ChangeThisSecretToken";
 
 router.get("/", (req, res) => {
     User.find()
@@ -66,18 +66,16 @@ router.post("/", (req, res) => {
     newUser.password = password;
     newUser.save();
 
-    res.status(200).json(newUser);
+    res.status(200).json({newUser});
 });
 
 router.patch("/password", (req, res) => {
     const user_id = jwt.verify(req.body.token, SECRET).user;
 
-    console.log(user_id);
     User.findByIdAndUpdate({
         _id: user_id,
     })
         .then(user => {
-            console.log(user);
             if (
                 bcrypt.compareSync(req.body.oldPassword, user.password) &&
                 req.body.password === req.body.passwordConfirm
@@ -96,6 +94,25 @@ router.patch("/password", (req, res) => {
         });
 });
 
+router.get("/:id/reviews", (req, res) => {
+    User.findOne({_id: req.params.id})
+        .then(book => {
+            Review.find({_id: {$in: book.reviews}})
+                .then(reviews => {
+                    res.status(200).json({reviews: reviews});
+                    return;
+                })
+                .catch(err => {
+                    res.status(400).json({errors: [err]});
+                    return;
+                });
+        })
+        .catch(err => {
+            res.status(404).send({errors: [err]});
+            return;
+        });
+});
+
 router.post("/bypass/everything", (req, res) => {
     console.log(req.body);
     User.create({
@@ -111,7 +128,7 @@ router.post("/bypass/everything", (req, res) => {
             res.status(200).send(user);
         })
         .catch(err => {
-            res.status(200).send(err);
+            res.status(400).send(err);
         });
 });
 
