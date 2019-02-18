@@ -11,10 +11,16 @@ export default class Booksdb extends React.Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/books')
+        axios.get('/api/books', {
+            params: {
+                token: localStorage.getItem('Token')
+        }})
         .then(res => {
-            books = res.results;
-            this.setState({book});
+            const books = res.books;
+            this.setState({book: books});
+            console.log('Done !')
+        }).catch(err => {
+            console.log('FCK YOU', err.message);
         })
     };
 
@@ -22,7 +28,7 @@ export default class Booksdb extends React.Component {
         return(
             <div>
                 <ul>
-                    {this.state.book.map(book => <li>{book.title}</li> )}
+                    {this.state.book.map(book => <li>{books.title}</li> )}
                 </ul>
             </div>
         )

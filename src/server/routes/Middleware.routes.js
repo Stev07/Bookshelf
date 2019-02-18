@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const SECRET = process.env.secret || "ChangeThisSecretToken";
 
 const isCoach = (req, res, next) => {
-    const token = req.body.token;
+    const token = req.query.token;
 
     const user_id = jwt.verify(token, SECRET).user;
 
@@ -35,7 +35,7 @@ const isCoach = (req, res, next) => {
 };
 
 const isLogged = (req, res, next) => {
-    const token = req.body.token;
+    const token = req.query.token;
 
     jwt.verify(token, SECRET, (err, decoded) => {
         if (err || !decoded) {

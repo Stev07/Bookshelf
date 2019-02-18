@@ -8,7 +8,6 @@ const express = require("express");
 let router = new express.Router();
 
 router.get("/", [isLogged], (req, res) => {
-    console.log(req.body);
     Book.find()
         .then(books => {
             res.status(200).json({books});

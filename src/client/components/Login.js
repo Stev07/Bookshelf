@@ -2,6 +2,7 @@ import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
 import {Link} from "react-router-dom";
+import NavBar from "./NavBar";
 import axios from "axios";
 
 class Login extends React.Component {
@@ -26,28 +27,29 @@ class Login extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const params = {
-            email: this.state.emailValue,
-            password: this.state.passValue,
-        };
 
         axios
             .post(`/api/users/login`, {
-                params: params,
+                email: this.state.emailValue,
+                password: this.state.passValue,
             })
             .then(res => {
+                console.log(res.data);
                 const user = res.data.user;
                 const token = res.data.token;
 
                 console.log(token);
                 localStorage.setItem("User", user);
                 localStorage.setItem("Token", token);
+            }).catch(err => {
+                alert('FCK YOU');
             });
     };
 
     render() {
         return (
             <div className="container">
+                <NavBar />
                 <div className="content">
                     <div className="logo">
                         <img
