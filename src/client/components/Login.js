@@ -1,7 +1,9 @@
 import * as React from "react";
 import "./scss/login.scss";
 import logoBecode from "../images/logo_Becode.png";
-import {Link} from "react-router-dom";
+import {
+    Link
+} from "react-router-dom";
 import NavBar from "./NavBar";
 import axios from "axios";
 
@@ -18,11 +20,15 @@ class Login extends React.Component {
     }
 
     handleChangeEmail(event) {
-        this.setState({emailValue: event.target.value});
+        this.setState({
+            emailValue: event.target.value
+        });
     }
 
     handleChangePass(event) {
-        this.setState({passValue: event.target.value});
+        this.setState({
+            passValue: event.target.value
+        });
     }
 
     handleSubmit = event => {
@@ -30,8 +36,10 @@ class Login extends React.Component {
 
         axios
             .post(`/api/users/login`, {
-                email: this.state.emailValue,
-                password: this.state.passValue,
+                params: {
+                    email: this.state.emailValue,
+                    password: this.state.passValue,
+                }
             })
             .then(res => {
                 console.log(res.data);
@@ -47,67 +55,108 @@ class Login extends React.Component {
     };
 
     render() {
-        return (
-            <div className="container">
-                <NavBar />
-                <div className="content">
-                    <div className="logo">
-                        <img
-                            className="logoBecode"
-                            src={logoBecode}
-                            alt="BeCode.org"
-                        />
-                    </div>
+        return ( <
+            div className = "container" >
+            <
+            NavBar / >
+            <
+            div className = "content" >
+            <
+            div className = "logo" >
+            <
+            img className = "logoBecode"
+            src = {
+                logoBecode
+            }
+            alt = "BeCode.org" /
+            >
+            <
+            /div>
 
-                    <div className="welcome">
-                        <p>{"BookShelf"}</p>
-                    </div>
+            <
+            div className = "welcome" >
+            <
+            p > {
+                "BookShelf"
+            } < /p> <
+            /div>
 
-                    <form className="user" onSubmit={this.handleSubmit}>
-                        <input
-                            type="email"
-                            className="inputUser"
-                            placeholder="Email"
-                            onChange={this.handleChangeEmail}
-                            value={this.state.emailValue}
-                        />
+            <
+            form className = "user"
+            onSubmit = {
+                this.handleSubmit
+            } >
+            <
+            input type = "email"
+            className = "inputUser"
+            placeholder = "Email"
+            onChange = {
+                this.handleChangeEmail
+            }
+            value = {
+                this.state.emailValue
+            }
+            />
 
-                        <input
-                            type="password"
-                            className="inputPassword"
-                            placeholder="Password"
-                            onChange={this.handleChangePass}
-                            value={this.state.passValue}
-                        />
-                    </form>
+            <
+            input type = "password"
+            className = "inputPassword"
+            placeholder = "Password"
+            onChange = {
+                this.handleChangePass
+            }
+            value = {
+                this.state.passValue
+            }
+            /> <
+            /form>
 
-                    <div className="login">
-                        <Link to="/home">
-                            <button
-                                type="submit"
-                                className="btnLogin"
-                                onClick={this.handleSubmit}>
-                                {"Home"}
-                            </button>
-                        </Link>
-                    </div>
+            <
+            div className = "login" >
+            <
+            Link to = "/home" >
+            <
+            button type = "submit"
+            className = "btnLogin"
+            onClick = {
+                this.handleSubmit
+            } > {
+                "Home"
+            } <
+            /button> <
+            /Link> <
+            /div>
 
-                    <div className="copyright">
-                        <p>{"© 2016-2019, BeCode.org"}</p>
-                    </div>
+            <
+            div className = "copyright" >
+            <
+            p > {
+                "© 2016-2019, BeCode.org"
+            } < /p> <
+            /div>
 
-                    <div className="squaresBox">
-                        <div id="block1" />
-                        <div id="block2" />
-                        <div id="block3" />
-                        <div id="block4" />
-                        <div id="block5" />
-                        <div id="block6" />
-                        <div id="block7" />
-                        <div id="block8" />
-                    </div>
-                </div>
-            </div>
+            <
+            div className = "squaresBox" >
+            <
+            div id = "block1" / >
+            <
+            div id = "block2" / >
+            <
+            div id = "block3" / >
+            <
+            div id = "block4" / >
+            <
+            div id = "block5" / >
+            <
+            div id = "block6" / >
+            <
+            div id = "block7" / >
+            <
+            div id = "block8" / >
+            <
+            /div> <
+            /div> <
+            /div>
         );
     }
 }

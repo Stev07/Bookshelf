@@ -13,7 +13,7 @@ export default class ShowBooks extends React.Component {
 
         this.state = {
             visible: false,
-            book: [],
+            //book: [],
             //data: data
         };
 

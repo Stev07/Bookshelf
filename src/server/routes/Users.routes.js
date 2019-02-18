@@ -21,11 +21,10 @@ router.get("/", [isLogged, isCoach], (req, res) => {
         });
 });
 
-router.post("/login", (req, res) => {
-    console.log(req.body.params);
-    User.findOne({email: req.body.params.email})
+router.post("/login", (req, res) => {   
+    User.findOne({email: req.body.email})
         .then(user => {
-            if (bcrypt.compareSync(req.body.params.password, user.password)) {
+            if (bcrypt.compareSync(req.body.password, user.password)) {
                 const token = jwt.sign({user: user._id}, SECRET);
 
                 res.status(200).json({

@@ -8,6 +8,8 @@ export default class Booksdb extends React.Component {
         this.state = {
             book: []
         }
+
+        this.books = this.state.book.map(book => <li>{book.title} {book.language}</li>)
     }
 
     componentDidMount = () => {
@@ -18,17 +20,18 @@ export default class Booksdb extends React.Component {
         .then(res => {
             const books = res.books;
             this.setState({book: books});
-            console.log('Done !')
         }).catch(err => {
             console.log('FCK YOU', err.message);
         })
     };
 
+    
+
     render(){
         return(
             <div>
                 <ul>
-                    {this.state.book.map(book => <li>{books.title}</li> )}
+                    {this.books}
                 </ul>
             </div>
         )
