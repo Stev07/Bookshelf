@@ -1,0 +1,37 @@
+.tabs{
+    font-family: 'Open sans condensed', sans-serif;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.tabs-title{
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.tabs-content{
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap;
+    padding-top: 20px;
+
+    .coach-form1{
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+    
+    .coach-form2{
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    input{
+        margin-bottom: 25px;
+        overflow: visible;
+    }
+}
