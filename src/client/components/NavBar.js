@@ -2,6 +2,7 @@ import * as React from "react";
 import {Link} from "react-router-dom";
 import "./scss/navbar.scss";
 
+
 export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -39,11 +40,11 @@ export default class NavBar extends React.Component {
                     <li className="navItem">
                         <Link to="/home"> {"Home"} </Link>
                     </li>
-                    <div>{"|"}</div>
+                    <div className="separate">{"|"}</div>
                     <li className="navItem">
                         <Link to="/books"> {"Books"} </Link>
                     </li>
-                    <div>{"|"}</div>
+                    <div className="separate">{"|"}</div>
                     <li className="navItem">
                         <Link to="/author"> {"Author"} </Link>
                     </li>

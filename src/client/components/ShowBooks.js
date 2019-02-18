@@ -1,25 +1,28 @@
 import React from "react";
-import data from "./data.json";
 import "./scss/AppDom.scss";
+import data from "./data.json"
 import {Modal} from "antd";
+import axios from 'axios';
+import Footer from "./Footer";
 
 export default class ShowBooks extends React.Component {
+
     constructor() {
         super();
 
         this.state = {
-            data: data,
             visible: false,
+            book: [],
+            data: data
         };
 
-        this.books = this.state.data.map(book => (
+        this.books = this.state.data.map(book => ( // Affichage des livres
             <div>
                 <div className="bookContainer">
                     <div
                         className="cardTitle"
                         key={book.id}
-                        bordered={true}
-                        style={{width: 300}}>
+                    >
                         <h3>{book.title}</h3>
                     </div>
                     <div className="cardCover">
@@ -69,18 +72,21 @@ export default class ShowBooks extends React.Component {
         });
     };
 
+
     render() {
         return (
             <div className="dbContent">
                 <div className="card-container">{this.books}</div>
                 <Modal
-                    title="Basic Modal"
+                    title="Book"
                     visible={this.state.visible}
-                    onCancel={this.handleCancel}>
+                    onCancel={this.handleCancel}
+                    cancelText={"Close"}>
                     <p>{"Some contents..."}</p>
                     <p>{"Some contents..."}</p>
                     <p>{"Some contents..."}</p>
                 </Modal>
+                <Footer />
             </div>
         );
     }

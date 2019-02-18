@@ -24,21 +24,24 @@ class Login extends React.Component {
         this.setState({passValue: event.target.value});
     }
 
-    handleSubmit = () => {
+    handleSubmit = event => {
+        event.preventDefault();
+        const params = {
+            email: this.state.emailValue,
+            password: this.state.passValue,
+        };
+
         axios
             .post(`/api/users/login`, {
-                email: this.state.emailValue,
-                password: this.state.passValue,
+                params: params,
             })
             .then(res => {
-                let user = res.data.user,
-                    token = res.data.token;
+                const user = res.data.user;
+                const token = res.data.token;
 
+                console.log(token);
                 localStorage.setItem("User", user);
                 localStorage.setItem("Token", token);
-            })
-            .catch(err => {
-                console.log(err.message);
             });
     };
 

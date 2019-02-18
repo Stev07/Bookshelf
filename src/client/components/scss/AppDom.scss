@@ -25,7 +25,7 @@ body {
     margin-top: 3%;
     
     .logoHeader {
-        width: 10em;
+        width: 9em;
     }
 }
 
@@ -68,7 +68,7 @@ body {
         border-radius: 100px;
         background-color: white;
 
-        font-size: x-large;
+        font-size:x-large;
         margin-right: 4rem;
         margin-left: 1rem;
 
@@ -80,11 +80,29 @@ body {
             text-align: right;
             margin: 1rem;
 
-        }  
+        }
     }
 }
 
 // Fin du CSS Header
+
+// CSS du footer
+
+.footer {
+    width: 100%;
+    height: 8vh;
+    background: #50f5cb;
+
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 3vh;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+// FIN CSS du Footer
 
 // CSS de la page HOME
 
@@ -108,12 +126,18 @@ body {
 }
 
 .showSection {
-    width: 100%;
-    height: 50vh;
-    background-image: linear-gradient(0deg, rgba(239,244,242,1) 8%, rgba(255,255,255,1) 70%);
 
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    padding: 3%;
+    height: auto;
+    // background-image: linear-gradient(0deg, rgba(239,244,242,1) 8%, rgba(255,255,255,1) 70%);
+
+    
+    
     align-items: center;
 
     .bookContainer {
@@ -150,72 +174,21 @@ body {
     justify-content: space-around;
     margin: auto;
     padding: 3%;
-
+    
     .bookContainer{
         border: 1px solid rgba(0, 0, 0, 0.306);
         
         width: 25vw;
         height: 75vh;
         margin-bottom: 5%;
-
+    
         text-align: center;
-
+    
         background-color: rgba(173, 216, 230, 0.197);
-
-
+    
+    
         .cardTitle {
-            margin: auto;
-            border-bottom-style: double;
-            border-bottom-color: cadetblue;
-            margin-bottom: 3%;
-            margin-top: 3%;
-
-            h3 {
-                font-style: italic;
-            }
-        }
-
-        .cardCover {
-            border: 1px solid black;
-            width: 150px;
-            height: 200px;
-            margin: auto;
-            margin-top: 5%;
-            margin-bottom: 5%;
-
-
-            .bookCover {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .cardInfo {
-
             margin: 10%;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            padding: 5%;
-            border-top-style: double;
-            border-top-color: cadetblue;
-        
-        }
-    }
-    
-    .bookContainer{
-        border: 1px solid rgba(0, 0, 0, 0.306);
-        
-        width: 25vw;
-        height: 75vh;
-        margin-bottom: 5%;
-    
-        text-align: center;
-    
-        background-color: rgba(173, 216, 230, 0.197);
-    
-    
-        .cardTitle {
-            margin: auto;
             border-bottom-style: double;
             border-bottom-color: cadetblue;
             margin-bottom: 3%;
@@ -253,4 +226,64 @@ body {
         }
     }
     
+    }
+
+
+    
+    @media all and (max-width: 768px) {
+        .header{
+            height: 100px;
+
+            .navLinks{
+                width: 100vw;
+                justify-content: space-between;
+            }
+
+            .userBox{
+                align-items: flex-end;
+            }
+        }
+        .logoBox{
+            width: 65%;
+            align-items: center;
+        }
+        .helloUser{
+            display: none;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        .section{
+            height: 40px;
+
+            .sectionName{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        .card-container{
+            .bookContainer{
+            width: 80vw;
+        }
+        }
+
+        .footer {
+            display: none;
+        }
+        
+
+        .showSection {
+            display:flex;
+            flex-wrap: wrap;
+
+        
+            .bookContainer {
+                width: 90%;
+                margin-bottom: 30px;
+                
+            }
+        }
     }

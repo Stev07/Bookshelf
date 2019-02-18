@@ -34,3 +34,15 @@ nav{
     top:0px;
     width: 100%;
 }
+
+@media all and (max-width: 768px) {
+
+    nav{
+        font-size:20px;
+        justify-content: space-evenly;
+
+        .separate{
+            display:none;
+        }
+    }
+}
