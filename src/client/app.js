@@ -30,10 +30,7 @@ export default class App extends React.Component {
                         <Route path="/home" component={Home} />
                         <Route path="/books" component={Books} />
                         <Route path="/author" component={Author} />
-                        <Route
-                            path="/coachinterface"
-                            component={CoachInterface}
-                        />
+                        <Route path="/coach" component={CoachInterface} />
                         <Route
                             path="/userinterface"
                             component={UserInterface}

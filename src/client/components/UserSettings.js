@@ -14,6 +14,9 @@ export default class UserSettings extends React.Component {
                 <Link to="/userinterface">{"Settings"}</Link>
             </Menu.Item>
             <Menu.Item>
+                <Link to="/coach">{"Coachs"}</Link>
+            </Menu.Item>
+            <Menu.Item>
                 <Link to="/" onClick={this.logout}>
                     {"Log out"}
                 </Link>
