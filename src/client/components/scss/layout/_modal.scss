@@ -62,7 +62,7 @@ body {
     margin-bottom: 10%;
     display: flex;
 
-    background: rgba(79, 140, 149, 0.46);
+    background: #50a8a2af;
     border: 1px solid rgba(0, 0, 0, 0.306);
 
     .user-info{
@@ -97,13 +97,13 @@ body {
 
         input {
 
-          height: 3vh;
+          height: 4vh;
           width: 20vw;
           color: black;
-          padding-left: 10%;
+          padding-left: 2%;
           font-size: 60%;
-          border-radius: 30px;
           border: 1px solid  rgba(0, 0, 0, 0.306);
+          border-radius: 5px;
 
         }
 
@@ -147,13 +147,18 @@ body {
   
     .infoBox {
       justify-content: end;
-      font-size: 1vh;
+      font-size: 2vh !important;
+    }
+
+    .details {
+      justify-content: start;
+      font-size: 2vh !important
     }
   
     .buttonConfirm {
   
       width: 20% !important;
-      height: 4.5vh;
+      height: 10% !important;
   
       p {
         font-size: 2vh !important;

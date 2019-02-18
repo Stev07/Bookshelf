@@ -3,6 +3,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import CoolTabs from "react-cool-tabs";
 import "./scss/coachinterface.scss";
+import Footer from "./Footer";
 
 class Content1 extends Component {
     render() {
