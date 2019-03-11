@@ -35,6 +35,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
+app.get('*', (req, res) => {
+    res.send('RUBY - MERDEEEEE');
+})
 app.use("/api", router);
 
 app.listen(APP_PORT, () =>
