@@ -14,7 +14,7 @@
     "build": "npm run build:server && npm run build:client",
     "build:svg": "svgr -d svg/ components/",
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd bin/client && npm install && npm run build"
   },
   "lint-staged": {
     "*.js": [
