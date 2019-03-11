@@ -21,7 +21,7 @@ export default class Booksdb extends React.Component {
             const books = res.books;
             this.setState({book: books});
         }).catch(err => {
-            console.log('FCK YOU', err.message);
+            console.log('Something went wrong', err.message);
         })
     };
 
