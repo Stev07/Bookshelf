@@ -29,7 +29,7 @@ const connOptions = {
 };
 
 mongoose
-    .connect(uri, connOptions)
+    .connect(uri, {})
     .then(() => console.log("connected"))
     .catch(err => console.log(err));
 
