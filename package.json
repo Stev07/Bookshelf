@@ -13,7 +13,7 @@
     "work:client": "npx webpack-dev-server --env=dev --hot --progress",
     "build": "npm run build:server && npm run build:client",
     "build:svg": "svgr -d svg/ components/",
-    "start": "node server/index.js",
+    "start": "node bin/server/index.js",
     "heroku-postbuild": "cd bin/client && npm install && npm run build"
   },
   "lint-staged": {
