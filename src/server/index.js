@@ -19,6 +19,7 @@ const app = express();
 const password = process.env.password;
 
 const mongoose = require("mongoose");
+console.log(password);
 const uri = "mongodb+srv://vlntngrgr:" + password + "@cluster0-ureau.mongodb.net/test?retryWrites=true";
 const connOptions = {
     useNewUrlParser: true,
