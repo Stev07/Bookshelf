@@ -13,7 +13,7 @@ import router from "./routes/Api.routes";
 
 const bodyParser = require("body-parser");
 
-const {APP_PORT} = process.env || 12345;
+const APP_PORT = process.env.APPPORT | 12345;
 
 const app = express();
 const password = process.env.password;
