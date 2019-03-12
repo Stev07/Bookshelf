@@ -13,12 +13,13 @@ import router from "./routes/Api.routes";
 
 const bodyParser = require("body-parser");
 
-const {APP_PORT} = process.env;
+const {APP_PORT} = process.env || 12345;
 
 const app = express();
+const password = process.env.password;
 
 const mongoose = require("mongoose");
-const uri = "mongodb://mongo/bookshelf";
+const uri = "mongodb+srv://vlntngrgr:" + password + "@cluster0-ureau.mongodb.net/test?retryWrites=true";
 const connOptions = {
     useNewUrlParser: true,
     authSource: "admin",
