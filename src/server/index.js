@@ -24,12 +24,13 @@ const uri = `mongodb://${username}:${password}@stitch.mongodb.com:27020/?authMec
 const connOptions = {
     useNewUrlParser: true,
     authSource: "admin",
-    user: "dev",
-    pass: "dev",
+    user: `${username}`,
+    pass: `${password}`,
+    appName: "bookshelf-ejxlz"
 };
 
 mongoose
-    .connect(uri, {})
+    .connect(uri, connOptions)
     .then(() => console.log("connected"))
     .catch(err => console.log(err));
 
