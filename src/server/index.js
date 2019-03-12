@@ -17,9 +17,10 @@ const APP_PORT = process.env.APPPORT | 12345;
 
 const app = express();
 const password = process.env.password;
+const username = process.env.username;
 
 const mongoose = require("mongoose");
-const uri = "mongodb+srv://vlntngrgr:" + password + "@cluster0-ureau.mongodb.net/test?retryWrites=true";
+const uri = `mongodb://${username}:${password}@stitch.mongodb.com:27020/?authMechanism=PLAIN&authSource=%24external&ssl=true&appName=bookshelf-ejxlz:mongodb-atlas:local-userpass`;
 const connOptions = {
     useNewUrlParser: true,
     authSource: "admin",
