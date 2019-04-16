@@ -85,13 +85,4 @@ router.get("/borrowings/:id", [isLogged], (req, res) => {
         });
 });
 
-/* import seedBook from "../seeds/Book.seed";
-
-router.post("/ultimate/seeds", (req, res) => {
-    console.log(req);
-    console.log(seedBook);
-    seedBook();
-    res.send("WORKED");
-}); */
-
 module.exports = router;

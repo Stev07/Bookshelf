@@ -27,6 +27,8 @@ router.get("/", [_Middleware.isLogged, _Middleware.isCoach], (req, res) => {
   });
 });
 router.post("/login", (req, res) => {
+  console.log(req.body);
+
   _User.default.findOne({
     email: req.body.email
   }).then(user => {

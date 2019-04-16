@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:////home/vlntngrgr/Bookshelf/node_modules/axios/index.js"],"names":["module","exports","__webpack_require__"],"mappings":"6EAAAA,EAAAC,QAAiBC,EAAQ","file":"js/0ea74e04e96fdf319504.js","sourcesContent":["module.exports = require('./lib/axios');"],"sourceRoot":""}

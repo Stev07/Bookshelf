@@ -10,9 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const bodyParser = require("body-parser");
 
-const {
-  APP_PORT
-} = process.env;
+const APP_PORT = process.env.APPPORT | 12345;
 const app = (0, _express.default)();
 
 const mongoose = require("mongoose");

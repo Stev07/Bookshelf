@@ -22,6 +22,7 @@ router.get("/", [isLogged, isCoach], (req, res) => {
 });
 
 router.post("/login", (req, res) => {   
+    console.log(req.body);
     User.findOne({email: req.body.email})
         .then(user => {
             if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -130,7 +131,7 @@ router.get("/reviews/:id", [isLogged], (req, res) => {
         });
 });
 
-/* router.post("/bypass/everything", (req, res) => {
+/*router.post("/bypass/everything", (req, res) => {
     console.log(req.body);
     User.create({
         name: {
@@ -147,6 +148,5 @@ router.get("/reviews/:id", [isLogged], (req, res) => {
         .catch(err => {
             res.status(400).send(err);
         });
-});
- */
+});*/
 module.exports = router;

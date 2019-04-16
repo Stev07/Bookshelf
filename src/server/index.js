@@ -16,17 +16,14 @@ const bodyParser = require("body-parser");
 const APP_PORT = process.env.APPPORT | 12345;
 
 const app = express();
-const password = process.env.password;
-const username = process.env.username;
 
 const mongoose = require("mongoose");
-const uri = `mongodb://${username}:${password}@stitch.mongodb.com:27020/?authMechanism=PLAIN&authSource=%24external&ssl=true&appName=bookshelf-ejxlz:mongodb-atlas:local-userpass`;
+const uri = "mongodb://mongo/bookshelf";
 const connOptions = {
     useNewUrlParser: true,
     authSource: "admin",
-    user: `${username}`,
-    pass: `${password}`,
-    appName: "bookshelf-ejxlz"
+    user: "dev",
+    pass: "dev",
 };
 
 mongoose
@@ -38,9 +35,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
-app.get('*', (req, res) => {
-    res.send('RUBY - MERDEEEEE');
-})
 app.use("/api", router);
 
 app.listen(APP_PORT, () =>

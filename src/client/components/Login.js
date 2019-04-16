@@ -33,23 +33,20 @@ class Login extends React.Component {
         event.preventDefault();
 
         axios
-            .post(`/api/users/login`, {
-                params: {
-                    email: this.state.emailValue,
-                    password: this.state.passValue,
-                },
+            .post('/api/users/login', {
+                    'email': `${this.state.emailValue}`,
+                    'password': `${this.state.passValue}`
             })
             .then(res => {
-                console.log(res.data);
                 const user = res.data.user;
                 const token = res.data.token;
-
-                console.log(token);
                 localStorage.setItem("User", user);
                 localStorage.setItem("Token", token);
+
+                this.props.history.push('/home');
             })
             .catch(err => {
-                alert("An error, what's append?");
+                alert("An error, what's append?" + err.message);
             });
     };
 
