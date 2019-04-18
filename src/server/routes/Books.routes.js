@@ -9,8 +9,31 @@ let router = new express.Router();
 
 router.get("/", [isLogged], (req, res) => {
     Book.find()
-        .then(books => {
-            res.status(200).json({books});
+    .then(books => {
+        res.status(200).json({books});
+    })
+    .catch(err => {
+        res.status(500).send({errors: [err.message]});
+    });
+});
+
+router.post("/", [isLogged, isCoach], (req, res) => {
+    const data = req.body;
+    
+    let book = new Book();
+    
+    for (let property in data) {
+        book[property] = req.body[property];
+    }
+    
+    book.save();
+    res.status(200).json(book);
+});
+
+router.get("/authors", [isLogged], (req, res) => {
+    Book.distinct("author")
+        .then(authors => {
+            res.status(200).json({authors});
         })
         .catch(err => {
             res.status(500).send({errors: [err.message]});
@@ -29,19 +52,6 @@ router.get("/:id", [isLogged], (req, res) => {
                 errors: ["Le livre n'a pas pu être trouvé!", err],
             });
         });
-});
-
-router.post("/", [isLogged, isCoach], (req, res) => {
-    const data = req.body;
-
-    let book = new Book();
-
-    for (let property in data) {
-        book[property] = req.body[property];
-    }
-
-    book.save();
-    res.status(200).json(book);
 });
 
 router.patch("/:id", [isLogged, isCoach], (req, res) => {

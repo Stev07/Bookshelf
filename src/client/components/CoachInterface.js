@@ -25,9 +25,11 @@ class Content1 extends Component {
                     <p>Email:</p>
                     <input type="email" />
                     <p>Password:</p>
-                    <input />
-                    <p>Password:</p>
-                    <input />
+                    <input type="password"/>
+                    <p>Confirm password:</p>
+                    <input type="password"/>
+
+                    <input type="submit"/>
                 </div>
             </div>
         );
@@ -57,6 +59,8 @@ class Content2 extends Component {
                         <br />
                         <p>Ebook</p>
                         <input type="checkbox" name="ebook"/>
+                        <br/>
+                        <input type="submit"/>
                     </form>
                 </div>
             </div>

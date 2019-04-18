@@ -1,7 +1,7 @@
 [
     {
         "title": "Pratical SVG",
-        "author": "Chris Coyier",
+        "author":  "Chris Coyier",
         "isbn": "193755743X",
         "language": "English",
         "ebook": false,
@@ -9,7 +9,7 @@
         "image": "https://images.gr-assets.com/books/1469630564l/31277338.jpg"
     },{
         "title": "Design Emotionnel",
-        "author": "Aarron Waller",
+        "author":  "Aarron Waller",
         "isbn": "2212133987",
         "language": "Francais",
         "ebook": false,
@@ -17,7 +17,7 @@
         "image": "https://images-na.ssl-images-amazon.com/images/I/61wMJ4uS4QL.jpg"
     },{
         "title": "Exercises for Programmers",
-        "author": "Brian P. Hogan",
+        "author":  "Brian P. Hogan",
         "isbn": "1680501224",
         "language": "English",
         "ebook": false,
@@ -25,7 +25,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781680501223-us.jpg"
     },{
         "title": "On Web Typography",
-        "author": "Jason Santa Maria",
+        "author":  "Jason Santa Maria",
         "isbn": "1937557065",
         "language": "English",
         "ebook": false,
@@ -33,7 +33,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557065-us.jpg"
     },{
         "title": "Going Responsive",
-        "author": "Karen McGrane",
+        "author":  "Karen McGrane",
         "isbn": "1937557308",
         "language": "English",
         "ebook": false,
@@ -41,7 +41,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557300-us-300.jpg"
     },{
         "title": "Algorithmique et Calcul Numerique",
-        "author": "Jose Ouin",
+        "author":  "Jose Ouin",
         "isbn": "2729881069",
         "language": "Francais",
         "ebook": false,
@@ -49,7 +49,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782729881061-us-300.jpg"
     },{
         "title": "CSS: Techniques Professionnelles pour une mise en page moderne",
-        "author": "E. A. Meyer",
+        "author":  "E. A. Meyer",
         "isbn": "2744025763",
         "language": "Francais",
         "ebook": false,
@@ -57,7 +57,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782744025761-us-300.jpg"
     },{
         "title": "HTML5 Une reference pour le developpeur web",
-        "author": "R. Rimele",
+        "author":  "R. Rimele",
         "isbn": "2212143656",
         "language": "Francais",
         "ebook": false,
@@ -65,7 +65,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782212143652-us-300.jpg"
     },{
         "title": "97 Things Every Programmer should Know",
-        "author": "Kevlin Henney",
+        "author":  "Kevlin Henney",
         "isbn": "818404951X",
         "language": "English",
         "ebook": false,
@@ -73,7 +73,7 @@
         "image": "https://pictures.abebooks.com/isbn/9788184049510-us-300.jpg"
     },{
         "title": "Design Pattern",
-        "author": "Freeman & Freeman",
+        "author":  "Freeman & Freeman",
         "isbn": "2841773507",
         "language": "Francais",
         "ebook": false,
@@ -81,7 +81,7 @@
         "image": "https://images-na.ssl-images-amazon.com/images/I/516XECZXY3L._SX403_BO1,204,203,200_.jpg"
     },{
         "title": "50 Exercices d'analyse transactionnelle",
-        "author": "Helene Dejean & Catherine Frugier",
+        "author":  "Helene Dejean & Catherine Frugier",
         "isbn": "2212554761",
         "language": "Francais",
         "ebook": false,
@@ -89,7 +89,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782212554762-us-300.jpg"
     },{
         "title": "The Pragmatic Programmer",
-        "author": "Thomas Hunt",
+        "author":  "Thomas Hunt",
         "isbn": "020161622X",
         "language": "English",
         "ebook": false,
@@ -97,7 +97,7 @@
         "image": "https://images-na.ssl-images-amazon.com/images/I/41BKx1AxQWL._SX396_BO1,204,203,200_.jpg"
     },{
         "title": "Rework, Reussir autrement",
-        "author": "Jason Fried & David Heinemeier Hansson",
+        "author":  "Jason Fried & David Heinemeier Hansson",
         "isbn": "284001713X",
         "language": "Francais",
         "ebook": false,
@@ -105,7 +105,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782840017134-us-300.jpg"
     },{
         "title": "CSS3 Flexbox",
-        "author": "R. Goetter",
+        "author":  "R. Goetter",
         "isbn": "221214363X",
         "language": "English",
         "ebook": false,
@@ -113,7 +113,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782212143638-us-300.jpg"
     },{
         "title": "The Big Book of Team Building Games",
-        "author": "Newstrom/Scannel",
+        "author":  "Newstrom/Scannel",
         "isbn": "0070465134",
         "language": "English",
         "ebook": false,
@@ -121,7 +121,7 @@
         "image": "https://pictures.abebooks.com/isbn/9780070465138-us-300.jpg"
     },{
         "title": "Tmux 2",
-        "author": "Brian P. Hogan",
+        "author":  "Brian P. Hogan",
         "isbn": "1680502212",
         "language": "English",
         "ebook": false,
@@ -129,7 +129,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781680502213-us-300.jpg"
     },{
         "title": "Parlez-vous shell?",
-        "author": "Th. Hugel",
+        "author":  "Th. Hugel",
         "isbn": "2729877592",
         "language": "Francais",
         "ebook": false,
@@ -137,7 +137,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782729877590-us-300.jpg"
     },{
         "title": "Mobile First",
-        "author": "Luke Wroblewski",
+        "author":  "Luke Wroblewski",
         "isbn": "1937557022",
         "language": "English",
         "ebook": false,
@@ -145,7 +145,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557027-us-300.jpg"
     },{
         "title": "La Phase de Recherche en Web Design",
-        "author": "Erika Hall",
+        "author":  "Erika Hall",
         "isbn": "2212141467",
         "language": "Francais",
         "ebook": false,
@@ -153,7 +153,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782212141467-us-300.jpg"
     },{
         "title": "Responsive Design: Patterns & Principles",
-        "author": "Ethan Marcotte",
+        "author":  "Ethan Marcotte",
         "isbn": "1937557332",
         "language": "English",
         "ebook": false,
@@ -161,7 +161,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557331-us-300.jpg"
     },{
         "title": "You're my Favourite Client",
-        "author": "Mike Monteiro",
+        "author":  "Mike Monteiro",
         "isbn": "1937557146",
         "language": "English",
         "ebook": false,
@@ -169,7 +169,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557140-us-300.jpg"
     },{
         "title": "HTML5 Pour les Web Designers",
-        "author": "Jeremy Keith",
+        "author":  "Jeremy Keith",
         "isbn": "2212128614",
         "language": "Francais",
         "ebook": false,
@@ -177,7 +177,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782212128611-us-300.jpg"
     },{
         "title": "Designing for Touch",
-        "author": "Josh Clark",
+        "author":  "Josh Clark",
         "isbn": "1937557286",
         "language": "English",
         "ebook": false,
@@ -185,7 +185,7 @@
         "image": "https://pictures.abebooks.com/isbn/9781937557287-us-300.jpg"
     },{
         "title": "Connectez-vous a vous-meme",
-        "author": "Chade-Meng TAN",
+        "author":  "Chade-Meng TAN",
         "isbn": "2266257161",
         "language": "Francais",
         "ebook": false,
@@ -193,7 +193,7 @@
         "image": "https://pictures.abebooks.com/isbn/9782266257169-us-300.jpg"
     },{
         "title": "Scrum en Action",
-        "author": "Guillaume Bodet",
+        "author":  "Guillaume Bodet",
         "isbn": "2744066656",
         "language": "Francais",
         "ebook": false,

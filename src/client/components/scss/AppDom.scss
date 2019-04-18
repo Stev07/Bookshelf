@@ -286,3 +286,13 @@ body {
             }
         }
         }
+
+.list-authors{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    font-size: 1.3rem;
+
+    text-align: center;
+}

@@ -24,6 +24,28 @@ router.get("/", [_Middleware.isLogged], (req, res) => {
     });
   });
 });
+router.post("/", [_Middleware.isLogged, _Middleware.isCoach], (req, res) => {
+  const data = req.body;
+  let book = new _Book.default();
+
+  for (let property in data) {
+    book[property] = req.body[property];
+  }
+
+  book.save();
+  res.status(200).json(book);
+});
+router.get("/authors", [_Middleware.isLogged], (req, res) => {
+  _Book.default.distinct("author").then(authors => {
+    res.status(200).json({
+      authors
+    });
+  }).catch(err => {
+    res.status(500).send({
+      errors: [err.message]
+    });
+  });
+});
 router.get("/:id", [_Middleware.isLogged], (req, res) => {
   const id = req.params.id;
 
@@ -38,17 +60,6 @@ router.get("/:id", [_Middleware.isLogged], (req, res) => {
       errors: ["Le livre n'a pas pu être trouvé!", err]
     });
   });
-});
-router.post("/", [_Middleware.isLogged, _Middleware.isCoach], (req, res) => {
-  const data = req.body;
-  let book = new _Book.default();
-
-  for (let property in data) {
-    book[property] = req.body[property];
-  }
-
-  book.save();
-  res.status(200).json(book);
 });
 router.patch("/:id", [_Middleware.isLogged, _Middleware.isCoach], (req, res) => {
   _Book.default.findOne({

@@ -1,10 +1,7 @@
 import React from "react";
 import "./scss/AppDom.scss";
-//import data from "./data.json"
 import {Modal} from "antd";
 import axios from "axios";
-//import Booksdb from "./Booksdb";
-import Footer from "./Footer";
 
 export default class ShowBooks extends React.Component {
     constructor() {
@@ -12,13 +9,15 @@ export default class ShowBooks extends React.Component {
 
         this.state = {
             visible: false,
+            selectedBook: undefined,
             data: []
         };
     }
 
-    showModal = () => {
+    showModal = (book) => {
         this.setState({
             visible: true,
+            selectedBook: book
         });
     };
 
@@ -30,7 +29,6 @@ export default class ShowBooks extends React.Component {
 
     componentDidMount() {
         const token = localStorage.getItem("Token");
-        console.log(token);
         const config = {
             headers: {
                 token
@@ -40,7 +38,6 @@ export default class ShowBooks extends React.Component {
         axios
             .get("/api/books", config)
             .then(res => {
-                console.log(res);
                 this.setState({data: res.data.books});
             })
             .catch(err => {
@@ -50,14 +47,13 @@ export default class ShowBooks extends React.Component {
 
     render() {
         const books = this.state.data.map(book => ( // Affichage des livres
-            <div key={book._id}>
+            <div key={book._id}  onClick={() => this.showModal(book)}>
                 <div className="bookContainer">
                     <div className="cardTitle">
                         <h3>{book.title}</h3>
                     </div>
                     <div className="cardCover">
                         <img
-                            onClick={this.showModal}
                             className="bookCover"
                             src={book.image}
                             alt={book.title}
@@ -68,21 +64,21 @@ export default class ShowBooks extends React.Component {
                             {"Author : "}
                             {book.author}
                         </p>
-                        <p>
+                        {/* <p>
                             {"Release date : "}
                             {book.releaseDate}
-                        </p>
+                        </p> */}
                         <p>
                             {"Language : "}
                             {book.language}
                         </p>
                         <p>
                             {"Physical : "}
-                            {book.physical}
+                            <input type="checkbox" onChange={() => {}} checked={book.physical ? true: false} disabled/>
                         </p>
                         <p>
                             {"Ebook : "}
-                            {book.ebook}
+                            <input type="checkbox" onChange={() => {}} checked={book.ebook ? true: false} disabled/>                        
                         </p>
                     </div>
                 </div>
@@ -91,15 +87,15 @@ export default class ShowBooks extends React.Component {
         return (
             <div className="dbContent">
                 <div className="card-container">{books}</div>
-                <Modal
-                    title="Book"
-                    visible={this.state.visible}
-                    onCancel={this.handleCancel}
-                    cancelText={"Close"}>
-                    <p>{"Some contents..."}</p>
-                    <p>{"Some contents..."}</p>
-                    <p>{"Some contents..."}</p>
-                </Modal>
+                {this.state.selectedBook && <Modal
+                        title={this.state.selectedBook.title}
+                        visible={this.state.visible}
+                        onCancel={this.handleCancel}
+                        cancelText={"Close"}>
+                        <p>{"ISBN: " + this.state.selectedBook.isbn}</p>
+                        <p>{"Authors: " + this.state.selectedBook.author}</p>
+                    </Modal>
+                }
             </div>
         );
     }

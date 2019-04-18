@@ -36,7 +36,7 @@ export default class App extends React.Component {
                             component={UserInterface}
                         />
                         <Route path="/user" component={Modal} />
-                        <Route component={Error} />
+                        <Route path="*" component={Error} />
                     </Switch>
                 </div>
             </Router>

@@ -12,7 +12,6 @@ export default class Header extends React.Component {
             user: "Hello ",
         };
     } // Données utilisées pour le header
-
     render() {
         return (
             <div className="header">
@@ -28,7 +27,7 @@ export default class Header extends React.Component {
                 </div>
                 <div className="userBox">
                     <div className="helloUserBox">
-                        <p className="helloUser">{"Hello, User"}</p>
+                        <p className="helloUser">{"Hello, admin"}</p>
                     </div>
                     <div className="iconBox">
                         <UserSettings />
